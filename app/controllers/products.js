@@ -178,7 +178,7 @@ exports.index = (req, res) => {
         
         if (filters.parent.length > 0) {
             selectedFilters.push({
-                heading: { text: 'Parent service' },
+                heading: { text: 'Business area' },
                 items: filters.parent.map(parent => ({
                     href: removeFilterFromUrl(req.originalUrl, 'parent', parent),
                     text: filterOptions.parents.find(p => p.value === parent)?.text || parent
