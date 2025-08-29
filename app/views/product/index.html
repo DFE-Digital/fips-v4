@@ -79,30 +79,7 @@
                     {% endif %}
 
                   
-             
-
-                    {% if product['Data Location'] %}
-                        {% set summaryRows = (summaryRows.push({
-                            key: {
-                                text: "Data location"
-                            },
-                            value: {
-                                text: product['Data Location']
-                            }
-                        }), summaryRows) %}
-                    {% endif %}
-
-                    {% if product['Hosting Location'] %}
-                        {% set summaryRows = (summaryRows.push({
-                            key: {
-                                text: "Hosting location"
-                            },
-                            value: {
-                                text: product['Hosting Location']
-                            }
-                        }), summaryRows) %}
-                    {% endif %}
-
+               
                     {{ govukSummaryList({
                 rows: summaryRows
             }) }}
