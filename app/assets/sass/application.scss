@@ -44,4 +44,6 @@ $govuk-font-family: "Inter", sans-serif;
   background-image: url(/public/images/icon-tag-remove-cross-white.svg) !important;
 }
 
-
+.govuk-main-wrapper {
+  padding-top: 0;
+}
