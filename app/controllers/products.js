@@ -24,6 +24,9 @@ function loadProductsData() {
             // Exclude all products with (PP) in Parent field
             if (product.Parent && product.Parent.includes("(PP)")) return false;
             
+            // Exclude products with "New" operational status
+            if (product['Operational Status'] === "New") return false;
+            
             return true;
         });
     } catch (error) {
@@ -147,8 +150,8 @@ exports.index = (req, res) => {
         const page = parseInt(req.query.page) || 1;
         const paginatedResults = paginateResults(filteredProducts, page);
         
-        // Get filter options with counts
-        const filterOptions = getFilterOptions(allProducts);
+        // Get filter options with counts based on current filters
+        const filterOptions = getFilterOptions(filteredProducts);
         
         // Prepare selected filters for display
         const selectedFilters = [];
@@ -183,13 +186,30 @@ exports.index = (req, res) => {
             });
         }
         
+        // Build current query string without page parameter for pagination links
+        const queryParams = new URLSearchParams();
+        if (filters.phase.length > 0) {
+            filters.phase.forEach(phase => queryParams.append('phase', phase));
+        }
+        if (filters['business-area'].length > 0) {
+            filters['business-area'].forEach(area => queryParams.append('business-area', area));
+        }
+        if (filters.parent.length > 0) {
+            filters.parent.forEach(parent => queryParams.append('parent', parent));
+        }
+        if (filters.keywords) {
+            queryParams.append('keywords', filters.keywords);
+        }
+        const baseQuery = queryParams.toString();
+
         res.render('products/index', {
             products: paginatedResults.products,
             pagination: paginatedResults,
             filters: filters,
             filterOptions: filterOptions,
             selectedFilters: selectedFilters,
-            clearFiltersUrl: req.baseUrl + req.path
+            clearFiltersUrl: req.baseUrl + req.path,
+            baseQuery: baseQuery
         });
         
     } catch (error) {

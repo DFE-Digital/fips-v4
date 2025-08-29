@@ -212,7 +212,7 @@
                             {% elif pageNum == 1 or pageNum == pagination.totalPages or (pageNum >= pagination.currentPage - 2 and pageNum <= pagination.currentPage + 2) %}
                                 {% set paginationItems = (paginationItems.push({
                                     number: pageNum,
-                                    href: "/products?" + (request.query | urlencode | replace("&page=" + pagination.currentPage, "") | replace("page=" + pagination.currentPage + "&", "") | replace("page=" + pagination.currentPage, "")) + ("&" if request.query and not request.query.endswith("&") else "") + "page=" + pageNum
+                                    href: "/products?" + (baseQuery + ("&" if baseQuery else "") + "page=" + pageNum)
                                 }), paginationItems) %}
                             {% elif (pageNum == pagination.currentPage - 3 or pageNum == pagination.currentPage + 3) and pagination.totalPages > 7 %}
                                 {% set paginationItems = (paginationItems.push({
@@ -223,10 +223,10 @@
 
                         {{ govukPagination({
                             previous: {
-                                href: "/products?" + (request.query | urlencode | replace("&page=" + pagination.currentPage, "") | replace("page=" + pagination.currentPage + "&", "") | replace("page=" + pagination.currentPage, "")) + ("&" if request.query and not request.query.endsWith("&") else "") + "page=" + (pagination.currentPage - 1)
+                                href: "/products?" + (baseQuery + ("&" if baseQuery else "") + "page=" + (pagination.currentPage - 1))
                             } if pagination.hasPrevPage,
                             next: {
-                                href: "/products?" + (request.query | urlencode | replace("&page=" + pagination.currentPage, "") | replace("page=" + pagination.currentPage + "&", "") | replace("page=" + pagination.currentPage, "")) + ("&" if request.query and not request.query.endsWith("&") else "") + "page=" + (pagination.currentPage + 1)
+                                href: "/products?" + (baseQuery + ("&" if baseQuery else "") + "page=" + (pagination.currentPage + 1))
                             } if pagination.hasNextPage,
                             items: paginationItems
                         }) }}
