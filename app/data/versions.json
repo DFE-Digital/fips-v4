@@ -1,0 +1,30 @@
+{
+  "currentVersion": "v-spike-assessments",
+  "versions": {
+    "v1": {
+      "name": "Version 1.0",
+      "description": "Initial release",
+      "date": "2025-08-29",
+      "status": "Beta",
+      "routePrefix": "",
+      "changes": [
+        "Product search and filtering",
+        "Individual product pages with contact information",
+        "Category browsing functionality",
+        "Feedback system with Airtable integration",
+        "Accessible design following WCAG 2.2 standards",
+        "Filtered data excluding infrastructure services"
+      ]
+    },
+    "v-spike-assessments": {
+      "name": "Assessment data integration spike",
+      "description": "Research spike for integrating assessment data",
+      "date": "2025-08-29",
+      "status": "Alpha",
+      "routePrefix": "/v-spike-assessments",
+      "changes": [
+        "Assessment data integration proof of concept"
+      ]
+    }
+  }
+}

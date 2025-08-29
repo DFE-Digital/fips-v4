@@ -13,17 +13,21 @@ const base = new Airtable({
 }).base(process.env.AIRTABLE_BASE_ID)
 
 // Import controllers
-const productsController = require('./controllers/products')
+const productsController = require('./controllers/v1/products')
 
-// Products routes
-router.get('/products', productsController.index)
-router.get('/product/:id', productsController.show)
-router.get('/product/:id/categories', productsController.categories)
+// v1 routes (default)
+router.get('/v1/products', productsController.index)
+router.get('/v1/product/:id', productsController.show)
+router.get('/v1/product/:id/categories', productsController.categories)
 
-// About page route
-router.get('/about', (req, res) => {
-    res.render('about/index')
+router.get('/v1/about', (req, res) => {
+    res.render('v1/about/index')
 })
+
+
+
+
+
 
 // Feedback submission route
 router.post('/submit-feedback', (req, res) => {

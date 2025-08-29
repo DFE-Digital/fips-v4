@@ -4,7 +4,7 @@ const path = require('path');
 // Load products data
 function loadProductsData() {
     try {
-        const dataPath = path.join(__dirname, '../data/fips.json');
+        const dataPath = path.join(__dirname, '../../data/fips.json');
         const data = fs.readFileSync(dataPath, 'utf8');
         const allProducts = JSON.parse(data);
         
@@ -202,7 +202,7 @@ exports.index = (req, res) => {
         }
         const baseQuery = queryParams.toString();
 
-        res.render('products/index', {
+        res.render('v1/products/index', {
             products: paginatedResults.products,
             pagination: paginatedResults,
             filters: filters,
@@ -272,7 +272,7 @@ exports.show = (req, res) => {
                 };
             });
         
-        res.render('product/index', {
+        res.render('v1/product/index', {
             product: product,
             contacts: contacts
         });
@@ -300,6 +300,14 @@ exports.categories = (req, res) => {
                 message: 'The product you are looking for does not exist.'
             });
         }
+
+        const contactKeys = [
+            'Owned By',
+            'Senior Responsible Owner', 
+            'Delivery Manager',
+            'Information Asset Owner'
+        ];
+        
         
         // Process categories data
         const categories = product.categories || {};
@@ -318,12 +326,25 @@ exports.categories = (req, res) => {
                 });
             }
         });
+
+         // Build contacts array with non-null values
+         const contacts = contactKeys
+         .filter(key => product[key] && product[key].trim() !== '')
+         .map(key => {
+             const name = product[key];
+             
+             return {
+                 role: key,
+                 name: name,
+             };
+         });
         
-        res.render('product/categories', {
+        res.render('v1/product/categories', {
             product: product,
             categories: categories,
             categoryTypes: categoryTypes,
-            allComponents: allComponents
+            allComponents: allComponents,
+            contacts: contacts
         });
         
     } catch (error) {

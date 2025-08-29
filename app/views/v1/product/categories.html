@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "v1/layouts/main.html" %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 {% from "govuk/components/tag/macro.njk" import govukTag %}
 
@@ -13,30 +13,30 @@
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
-                    <a href="/products" class="govuk-back-link">Back to products</a>
+                    <a href="/v1/products" class="govuk-back-link">Back to products</a>
                     <h1 class="govuk-heading-l dfe-masthead--title">
                         {{ product.Name }}
                     </h1>
-                    <table class="govuk-table">
+                       <table class="govuk-table">
                         <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
                                 <th class="govuk-table__header govuk-!-width-one-quarter">ID</th>
                                 <th class="govuk-table__header govuk-!-width-one-quarter">Phase</th>
                                 <th class="govuk-table__header govuk-!-width-one-quarter">Business area</th>
-                                <th class="govuk-table__header govuk-!-width-one-quarter">Components</th>
+                                <th class="govuk-table__header govuk-!-width-one-quarter">Contacts</th>
                             </tr>
                         </thead>
                         <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
-                                <td class="govuk-table__cell"><span class="govuk-visually-hidden">UniqueID: </span>{{ product.id | truncate(6) }}</td>
-                                <td class="govuk-table__cell"><span class="govuk-visually-hidden">Phase: </span>{% if product.phase %}
-                                    {{ govukTag({
-                                        text: product.phase,
-                                        classes: "govuk-tag--blue"
-                                    }) }}
-                                {% endif %}</td>
+                                <td class="govuk-table__cell"><span class="govuk-visually-hidden">UniqueID: </span><span title="{{ product.id }}">{{ product.id | truncate(6) }}</span></td>
+                                <td class="govuk-table__cell"><span class="govuk-visually-hidden">Phase: </span>  {% if product.phase %}
+                            {{ govukTag({
+                        text: product.phase,
+                        classes: "govuk-tag--blue"
+                    }) }}
+                        {% endif %}</td>
                                 <td class="govuk-table__cell"><span class="govuk-visually-hidden">Business area: </span>{{ product['Parent'] }}</td>
-                                <td class="govuk-table__cell">{{ allComponents | length }} components</td>
+                                <td class="govuk-table__cell"><a href="/v1/product/{{ product.id }}#contacts" class="govuk-link">{{ contacts | length }} contacts</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -57,10 +57,10 @@
                         </button>
                         <ul class="dfe-vertical-nav__section" id="side-navigation">
                             <li class="dfe-vertical-nav__section-item">
-                                <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/product/{{ product.id }}">Overview</a>
+                                <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/v1/product/{{ product.id }}">Overview</a>
                             </li>
                             <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--current">
-                                <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/product/{{ product.id }}/categories">Categories</a>
+                                <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/v1/product/{{ product.id }}/categories">Categories</a>
                             </li>
                         </ul>
                     </nav>
