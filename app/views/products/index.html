@@ -107,7 +107,7 @@
                                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                             Business area
                                         </legend>
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" style="max-height: 200px; overflow-y: auto; padding-left: 10px; padding-right: 10px; margin-left: -10px;">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" style="max-height: 210px; overflow-y: auto; padding-left: 10px; padding-right: 10px; margin-left: -10px;">
                                             {% for parent in parentItems %}
                                                 <div class="govuk-checkboxes__item">
                                                     <input class="govuk-checkboxes__input" id="parent-{{ loop.index }}" name="parent" type="checkbox" value="{{ parent.value }}"{% if parent.checked %} checked{% endif %}>
