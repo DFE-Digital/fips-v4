@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "About this service" %}
+{% set pageDescription = "Learn about the DfE product and service directory" %}
+{% set nav = 'about' %}
+{% set showNav = true %}
+
+{% block main %}
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper" id="main-content" role="main"{% if mainClasses %} class="{{ mainClasses }}"{% endif %}>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+                    <h1 class="govuk-heading-xl">{{ pageName }}</h1>
+
+                    <div class="govuk-inset-text">
+                        <dl class="govuk-summary-list">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Current version</dt>
+                                        <dd class="govuk-summary-list__value">1.0.0 <a href="" class="govuk-link">(release notes)</a></dd>
+                                    </div>  
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">Last release</dt>
+                                        <dd class="govuk-summary-list__value">29 August 2025</dd>
+                                    </div>  
+                        </dl>
+
+                    </div>
+
+                    <p class="govuk-body">Find information about products and services helps you discover and explore digital products and services across the Department for Education.</p>
+
+                    <h2 class="govuk-heading-l">What you can do</h2>
+
+                    <p class="govuk-body">Use this service to:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>search and filter DfE products and services</li>
+                        <li>view detailed information about each product including contacts and responsibilities</li>
+                        <li>explore technical components and categories for each service</li>
+                        <li>find contact details for product owners and delivery teams</li>
+                    </ul>
+
+                    <h2 class="govuk-heading-l">Data sources</h2>
+
+                    <p class="govuk-body">The service displays information from the DfE Configuration Management Database (CMDB).</p>
+                   
+
+                    <h2 class="govuk-heading-l">Roadmap</h2>
+
+                    <p class="govuk-body">The roadmap is a work in progress and will be updated regularly to reflect the latest developments and enhancements.</p>
+
+                    <h2 class="govuk-heading-l">Release notes</h2>
+
+                    <h3 class="govuk-heading-m">Version 1.0.0</h3>
+                    <p class="govuk-body">Initial release of the service.</p>
+                   
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                    <div class="dfe-page--aside-top-border">
+                        <div class="gem-c-related-navigation">
+                            <h2 class="govuk-heading-m">Related content</h2>
+
+                            <nav role="navigation">
+                                <ul class="govuk-list">
+                                    <li>
+                                        <a href="/products" class="govuk-link">Search products and services</a>
+                                    </li>
+                                    <li>
+                                        <a href="/categories" class="govuk-link">Browse by categories</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                         
+
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock %}
