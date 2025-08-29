@@ -29,7 +29,7 @@
                         </thead>
                         <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
-                                <td class="govuk-table__cell"><span class="govuk-visually-hidden">UniqueID: </span>{{ product.id | truncate(6) }}</td>
+                                <td class="govuk-table__cell"><span class="govuk-visually-hidden">UniqueID: </span><span title="{{ product.id }}">{{ product.id | truncate(6) }}</span></td>
                                 <td class="govuk-table__cell"><span class="govuk-visually-hidden">Phase: </span>  {% if product.phase %}
                             {{ govukTag({
                         text: product.phase,

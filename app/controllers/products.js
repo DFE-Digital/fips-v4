@@ -236,13 +236,12 @@ exports.show = (req, res) => {
             });
         }
         
-        // Define contact keys to check (excluding Service Desk as it's not a person)
+        // Define contact keys to check (excluding Service Desk and Assigned To as they're not relevant contacts)
         const contactKeys = [
             'Owned By',
             'Senior Responsible Owner', 
             'Delivery Manager',
-            'Information Asset Owner',
-            'Assigned To'
+            'Information Asset Owner'
         ];
         
         // Helper function to convert name to email
