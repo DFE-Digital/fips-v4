@@ -14,7 +14,8 @@ function loadProductsData() {
             "Corporate services", 
             "Shared IT core services",
             "zBusiness Operations (do not use)",
-            "Voice and Data Network"
+            "Voice and Data Network",
+            "IT for the IT department"
         ];
         
         return allProducts.filter(product => {
