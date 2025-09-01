@@ -35,7 +35,8 @@ router.get('/v1/', (req, res) => {
             "Corporate services", 
             "Shared IT core services",
             "zBusiness Operations (do not use)",
-            "Voice and Data Network"
+            "Voice and Data Network",
+            "IT for the IT department"
         ]
         
         const filteredProducts = allProducts.filter(product => {
@@ -84,7 +85,8 @@ router.get('/v-spk-assessments/', (req, res) => {
             "Corporate services", 
             "Shared IT core services",
             "zBusiness Operations (do not use)",
-            "Voice and Data Network"
+            "Voice and Data Network",
+            "IT for the IT department"
         ]
         
         const filteredProducts = allProducts.filter(product => {
