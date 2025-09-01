@@ -65,6 +65,83 @@ router.get('/v1/about', (req, res) => {
     res.render('v1/about/index')
 })
 
+router.get('/v1/categories', (req, res) => {
+    // Load categories data
+    const fs = require('fs')
+    const path = require('path')
+    
+    try {
+        const categoriesPath = path.join(__dirname, 'data/categories.json')
+        const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
+        
+        // Filter to only show the specified taxonomies
+        const allowedTaxonomies = ['Business area', 'Phase', 'Type', 'Channels']
+        const filteredCategories = categoriesData.filter(category => 
+            allowedTaxonomies.includes(category.Taxonomy)
+        )
+        
+        // Group by taxonomy
+        const groupedCategories = {}
+        filteredCategories.forEach(category => {
+            if (!groupedCategories[category.Taxonomy]) {
+                groupedCategories[category.Taxonomy] = []
+            }
+            groupedCategories[category.Taxonomy].push(category)
+        })
+        
+        res.render('v1/categories/index', {
+            categories: groupedCategories
+        })
+    } catch (error) {
+        console.error('Error loading categories:', error)
+        res.render('v1/categories/index', {
+            categories: {}
+        })
+    }
+})
+
+router.get('/v1/categories/category/:taxonomy', (req, res) => {
+    // Load categories data for specific taxonomy
+    const fs = require('fs')
+    const path = require('path')
+    
+    try {
+        const categoriesPath = path.join(__dirname, 'data/categories.json')
+        const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
+        
+        // Map URL slugs to taxonomy names
+        const taxonomyMap = {
+            'phase': 'Phase',
+            'business-area': 'Business area',
+            'type': 'Type',
+            'channels': 'Channels'
+        }
+        
+        const taxonomyName = taxonomyMap[req.params.taxonomy]
+        if (!taxonomyName) {
+            return res.status(404).render('error', { 
+                error: 'Taxonomy not found',
+                message: 'The requested taxonomy does not exist.'
+            })
+        }
+        
+        // Filter categories for this taxonomy
+        const taxonomyItems = categoriesData.filter(category => 
+            category.Taxonomy === taxonomyName
+        )
+        
+        res.render('v1/categories/category/index', {
+            taxonomy: taxonomyName,
+            items: taxonomyItems
+        })
+    } catch (error) {
+        console.error('Error loading taxonomy data:', error)
+        res.status(500).render('error', { 
+            error: 'Unable to load taxonomy data' 
+        })
+    }
+})
+
 
 
 
@@ -113,6 +190,83 @@ router.get('/v-spk-assessments/product/:id/categories', vspkproductsController.c
 
 router.get('/v-spk-assessments/about', (req, res) => {
     res.render('v-spk-assessments/about/index')
+})
+
+router.get('/v-spk-assessments/categories', (req, res) => {
+    // Load categories data
+    const fs = require('fs')
+    const path = require('path')
+    
+    try {
+        const categoriesPath = path.join(__dirname, 'data/categories.json')
+        const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
+        
+        // Filter to only show the specified taxonomies
+        const allowedTaxonomies = ['Business area', 'Phase', 'Type', 'Channels']
+        const filteredCategories = categoriesData.filter(category => 
+            allowedTaxonomies.includes(category.Taxonomy)
+        )
+        
+        // Group by taxonomy
+        const groupedCategories = {}
+        filteredCategories.forEach(category => {
+            if (!groupedCategories[category.Taxonomy]) {
+                groupedCategories[category.Taxonomy] = []
+            }
+            groupedCategories[category.Taxonomy].push(category)
+        })
+        
+        res.render('v-spk-assessments/categories/index', {
+            categories: groupedCategories
+        })
+    } catch (error) {
+        console.error('Error loading categories:', error)
+        res.render('v-spk-assessments/categories/index', {
+            categories: {}
+        })
+    }
+})
+
+router.get('/v-spk-assessments/categories/category/:taxonomy', (req, res) => {
+    // Load categories data for specific taxonomy
+    const fs = require('fs')
+    const path = require('path')
+    
+    try {
+        const categoriesPath = path.join(__dirname, 'data/categories.json')
+        const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
+        
+        // Map URL slugs to taxonomy names
+        const taxonomyMap = {
+            'phase': 'Phase',
+            'business-area': 'Business area',
+            'type': 'Type',
+            'channels': 'Channels'
+        }
+        
+        const taxonomyName = taxonomyMap[req.params.taxonomy]
+        if (!taxonomyName) {
+            return res.status(404).render('error', { 
+                error: 'Taxonomy not found',
+                message: 'The requested taxonomy does not exist.'
+            })
+        }
+        
+        // Filter categories for this taxonomy
+        const taxonomyItems = categoriesData.filter(category => 
+            category.Taxonomy === taxonomyName
+        )
+        
+        res.render('v-spk-assessments/categories/category/index', {
+            taxonomy: taxonomyName,
+            items: taxonomyItems
+        })
+    } catch (error) {
+        console.error('Error loading taxonomy data:', error)
+        res.status(500).render('error', { 
+            error: 'Unable to load taxonomy data' 
+        })
+    }
 })
 
 

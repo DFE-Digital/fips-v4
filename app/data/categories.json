@@ -1,0 +1,1121 @@
+[
+  {
+    "Taxonomy":"Channels",
+    "Item":"Web",
+    "Slug": "web",
+    "Description":"Services delivered through a website accessible via browsers on desktops, laptops, tablets, and mobile devices.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Channels",
+    "Item":"Native app",
+    "Slug": "native_app",
+    "Description":"Dedicated applications built specifically for mobile platforms (iOS, Android) offering enhanced performance and device integration.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Channels",
+    "Item":"Face-to-face",
+    "Slug": "face_to_face",
+    "Description":"Direct in-person interactions where service users meet with a representative or attend events, consultations, or physical service centres.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Channels",
+    "Item":"Phone",
+    "Slug": "phone",
+    "Description":"Voice-based communications provided via telephone support lines or call centres.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Channels",
+    "Item":"Email",
+    "Slug": "email",
+    "Description":"Communication channel using email for notifications, updates, and support.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Channels",
+    "Item":"Chat",
+    "Slug": "chat",
+    "Description":"Real-time text-based communication delivered through web or mobile interfaces, often supporting automated and human interactions.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Channels",
+    "Item":"Print media",
+    "Slug": "print_media",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":"Letters, Newspapers, Flyers, Brochures"
+  },
+  {
+    "Taxonomy":"Channels",
+    "Item":"Other digital media",
+    "Slug": "other_digital_media",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":"Digital billboards, cinema, TV adverts"
+  },
+  {
+    "Taxonomy":"Life Stages",
+    "Item":"Early childhood",
+    "Description":"0-4 - Involves early years support, childcare, and pre-school education.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Life Stages",
+    "Item":"School age",
+    "Description":"5-16 - Compulsory education phase where children attend primary and secondary schools.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Life Stages",
+    "Item":"Post-compulsory \/ adolescent",
+    "Description":"16-18\/19 - Transition phase where young people either continue into further education or training; key decisions about career paths are made.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Life Stages",
+    "Item":"Young adult",
+    "Description":"18-25 - Transition into independence, higher education or workforce entry, and, for care leavers, ongoing support.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Life Stages",
+    "Item":"Adult",
+    "Description":"25+ - Continuous upskilling and professional development, often via adult education, apprenticeships, and vocational training.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Life Stages",
+    "Item":"Death",
+    "Description":"All - Event of death",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Opportunity Mission",
+    "Item":"Best Start in Life",
+    "Description":"This pillar focuses on the early years, aiming to significantly improve child development. The goal is for 75% of five-year-olds to reach a good level of development by 2028.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Opportunity Mission",
+    "Item":"Every Child Achieving and Thriving",
+    "Description":"The objective here is to ensure that every child and young person can achieve in school, regardless of their background.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Opportunity Mission",
+    "Item":"Skills for Opportunity and Growth",
+    "Description":"As young people transition into adulthood, this pillar ensures they have the necessary skills and opportunities for further education and employment.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Opportunity Mission",
+    "Item":"Family Security",
+    "Description":"This pillar addresses the broader context in which children grow up. By working across government, it aims to remove barriers that prevent families from having their basic needs met, which in turn improves outcomes for children.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Request",
+    "Slug": "request",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":"This is added as part of the central ops process"
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Explore",
+    "Slug": "explore",
+    "Description":"Initial exploration of a potential problem, opportunity, or policy area. Activities include early research, initial stakeholder conversations, and informal investigations. No formal commitment or funding yet agreed.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":"This is added as part of the central ops process"
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Triage",
+    "Slug": "triage",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":"This is added as part of the central ops process"
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Discovery",
+    "Slug": "discovery",
+    "Description":"Formal investigation into user needs, policy objectives, and existing service provision. Identifies the problem to solve, user groups, and initial technical considerations. Outputs include user research findings, validated user needs, and recommendations on progressing to Alpha.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Alpha",
+    "Slug": "alpha",
+    "Description":"Experimental phase involving rapid prototyping, testing different approaches, validating hypotheses, and identifying risks. Outputs include working prototypes, tested user journeys, refined user stories, and defined MVP scope.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Private Beta",
+    "Slug": "private_beta",
+    "Description":"Initial build of the service released to a restricted, invited audience. Service undergoes detailed testing and refinement based on real-world usage, feedback, and analytics. Typically involves controlled access, iterative improvements, and early-stage compliance assessments.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Public Beta",
+    "Slug": "public_beta",
+    "Description":"Service openly available to the public, clearly marked as 'beta'. Continues iterative improvements and scalability testing, ensuring it meets all Service Standard criteria. Analytics, user feedback, and robust monitoring inform continuous improvements towards becoming a stable live service.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Live",
+    "Slug": "live",
+    "Description":"Fully operational, widely available service meeting the GOV.UK Service Standard. Ongoing service management, continuous improvement, monitoring, and assurance activities are in place. Clear governance, support processes, and service ownership established.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Decomissioning",
+    "Slug": "decomissioning",
+    "Description":"Actively in the process of winding down the service. Users are being migrated, data archived, and activities managed to safely close the service. Communications and transition plans in place to minimise user impact.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Phase",
+    "Item":"Decomissioned",
+    "Slug": "decomissioned",
+    "Description":"Service has formally ended, is no longer available, and all operations and user access have ceased. Relevant data archived, users migrated to alternative services if required, and formal closure documentation completed.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Education Phase",
+    "Item":"Early Years",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Education Phase",
+    "Item":"Primary \u2028(KS1 - KS2)",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Education Phase",
+    "Item":"Secondary \u2028(KS3 - KS4)",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Education Phase",
+    "Item":"Further Education\u2028(FE)",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Education Phase",
+    "Item":"Higher Education\u2028(HE)",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Education Phase",
+    "Item":"Apprenticeships",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Education Phase",
+    "Item":"Lifelong learning",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Calendar year",
+    "Description":"January to December",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Financial Year",
+    "Description":"April to March",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Academic year",
+    "Description":"September to August ",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Bi-Annually",
+    "Description":"Twice a year",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Calendar Quarter",
+    "Description":"January to March, April to June,\u2028July to September,\u2028October to December",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Financial Quarter",
+    "Description":"Q1 - April to June, Q2 - July to September,\u2028Q3 - October to December,\u2028Q4- January to March",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Monthly",
+    "Description":"Each month",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Weekly",
+    "Description":"Every week",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Daily",
+    "Description":"Each day",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Timeframes",
+    "Item":"Ad-Hoc",
+    "Description":"On demand",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Type",
+    "Item":"Transactional",
+    "Slug": "transactional",
+    "Description":"Services that involve an exchange\u2014applying, submitting, paying, registering, booking, or claiming something.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Type",
+    "Item":"Information",
+    "Slug": "information",
+    "Description":"Provide guidance, policy content, or structured information to help people make decisions or understand their responsibilities.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Type",
+    "Item":"Data collection and reporting",
+    "Slug": "data_collection_and_reporting",
+    "Description":"Used to submit, validate, and view data as required by DfE",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Type",
+    "Item":"API",
+    "Slug": "api",
+    "Description":"API-Only service",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Type",
+    "Item":"Campaign",
+    "Slug": "campaign",
+    "Description":null,
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Start page",
+    "Description":"Clearly explaining eligibility criteria, what users need, and steps involved before users begin.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Check eligibility",
+    "Description":"Guiding users through criteria to determine if they qualify for a specific service, funding, or support",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Apply for something",
+    "Description":"Standard processes for users submitting applications",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Register",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Sign in \/ Authenticate",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Check your answers",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Book something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Pay for something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Receive payment",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Verify Identity",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Find something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Learn something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Report (Tell) something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Manage something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Check something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Upload something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Download something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Appeal something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Give feedback",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"Request something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Service Patterns",
+    "Item":"End something",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Public Sector Websites and Applications Accessibility Regulations 2018",
+    "Description":"Requires public sector websites and apps to meet WCAG 2.2 AA standards",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Equality Act",
+    "Description":"Duty to prevent discrimination and ensure reasonable adjustments for users with disabilities.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Public Sector Equality Duty (PSED) under the Equality Act 2010",
+    "Description":"Legal duty to consider how policies and services affect people with protected characteristics (age, race, gender, disability, etc.).",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"UK GDPR and Data Protection Act 2018",
+    "Description":"Ensure lawful, fair, transparent processing of personal data.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Privacy and Electronic Communications (PECR) 2003",
+    "Description":"Governs electronic marketing, cookies, and direct communication (email\/SMS).",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Government Security Classifications Policy",
+    "Description":"Data and systems must be appropriately classified (Official, Official-Sensitive).",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"National Security Vetting",
+    "Description":"Baseline Personall Security Standard for staff delivering services, SC and DV",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"ISO 27001",
+    "Description":"Baseline certification required for suppliers developing digital services.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Children Act 1989 & 2004",
+    "Description":"Duty to protect the welfare of children and vulnerable learners interacting with DfE services.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Keeping Children Safe in Education (KCSIE)",
+    "Description":"Statutory guidance for safeguarding duties in education-related services.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Public Contracts Regulations 2015",
+    "Description":"Rules governing fair and transparent procurement processes for digital and technology services.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Social Value Act 2012",
+    "Description":"Duty to consider how procurement can improve social, economic, and environmental wellbeing.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Open Government Licence (OGL)",
+    "Description":"Requirement to publish reusable public sector information and content under OGL unless exceptions apply.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Freedom of Information Act 2000",
+    "Description":"Right of public access to information held by government bodies, including DfE services.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Transparency obligations",
+    "Description":"Publication of data, policies, and service details on GOV.UK for public scrutiny.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Public Records Act 1958 and 1967",
+    "Description":"Legal requirement to maintain records and documentation of decisions and processes.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Welsh Language Act 1993 and Welsh Language (Wales) Measure 2011",
+    "Description":"Requirement for bilingual (English\/Welsh) digital services when applicable.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Greening Government Commitments (GGCs)",
+    "Description":"Government-wide sustainability targets including digital infrastructure energy use and carbon footprint reduction.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Civil Contingencies Act 2004",
+    "Description":"Obligation to ensure continuity of key services in emergencies or disruptions.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"GOV.UK Service Standard",
+    "Description":"Mandatory standards for user-centred, accessible, secure, and scalable services.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Technology Code of Practice (TCOP)",
+    "Description":"Defines best practice for building secure, maintainable, open technology services.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Digital Economy Act 2017",
+    "Description":"Facilitates data sharing between government departments, with specific controls on transparency and public benefit.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Education Act 1996, Education Act 2002",
+    "Description":"Establish statutory duties and powers around education provision, school admissions, funding, qualifications, and related digital services.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Education and Skills Act 2008",
+    "Description":"Establish statutory duties and powers around education provision, school admissions, funding, qualifications, and related digital services.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Apprenticeships, Skills, Children and Learning Act 2009",
+    "Description":"Covers apprenticeship and skills training, and arrangements for youth services",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Higher Education and Research Act 2017",
+    "Description":"Relates specifically to higher education provision, standards, funding, and oversight.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Teaching Excellence Framework",
+    "Description":"The Teaching Excellence Framework (TEF) primarily applies to higher education (HE) institutions in England, including universities and colleges, to assess and promote excellent teaching quality, learning environments, and student outcomes.",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Legal and Duties",
+    "Item":"Intellectual Property",
+    "Description":"Refers to the ownership of an idea or design by the person who came up with it. ",
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Central Government",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Executive Agency",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Non-Departmental Public Body",
+    "Description":null,
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Local Government",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Devolved Government",
+    "Description":null,
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Voluntary Sector",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Charity Sector",
+    "Description":null,
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Private Sector",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Education",
+    "Description":null,
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Training Provider",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Health Provider",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Organisation Types",
+    "Item":"Law and Public Safety",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Skills England",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Standards and Testing Agency",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Teaching Regulation Agency",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Ofqual",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Ofsted",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Office for Students",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Office of the Children's Commissioner",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"LocatED",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Engineering Construction Industry Training Board",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Construction Industry Training Board",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Oak National Academy",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Social Work England",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Student Loans Company",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"School Teachers' Review Body",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Office of the schools adjudicator",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Child Safeguarding Practice Review Panel",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"DfE Agencies and Bodies",
+    "Item":"Independent Review Mechanism",
+    "Description":null,
+    "Validated":null,
+    "In version":1.0,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Business area",
+    "Item":"CXD",
+    "Slug": "cxd",
+    "Description":"Customer Experience Design and user-centred design services.",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Business area",
+    "Item":"Families",
+    "Slug": "families",
+    "Description":"Services supporting families and children.",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Business area",
+    "Item":"Funding",
+    "Slug": "funding",
+    "Description":"Financial support and funding programmes for education and skills.",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Business area",
+    "Item":"Regions",
+    "Slug": "regions",
+    "Description":"Services for academies and trusts.",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Business area",
+    "Item":"Schools",
+    "Slug": "schools",
+    "Description":"Services supporting teachers and school leaders.",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Business area",
+    "Item":"Sector Facing",
+    "Slug": "sector_facing",
+    "Description":"Services that directly interface with education and skills sectors.",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Business area",
+    "Item":"Skills",
+    "Slug": "skills",
+    "Description":"Adult education, apprenticeships and skills development services.",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"Business area",
+    "Item":"Operations and Infrastructure",
+    "Slug": "operations_and_infrastructure",
+    "Description":"Internal operations, technology infrastructure and support services.",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  }
+]
