@@ -164,7 +164,7 @@
     "Taxonomy":"Phase",
     "Item":"Explore",
     "Slug": "explore",
-    "Description":"Initial exploration of a potential problem, opportunity, or policy area. Activities include early research, initial stakeholder conversations, and informal investigations. No formal commitment or funding yet agreed.",
+    "Description":"Initial exploration of a potential problem, opportunity, or policy area. Includes research and stakeholder conversations, no formal commitment or funding yet agreed.",
     "Validated":null,
     "In version":1.0,
     "Comments":"This is added as part of the central ops process"
@@ -182,7 +182,7 @@
     "Taxonomy":"Phase",
     "Item":"Discovery",
     "Slug": "discovery",
-    "Description":"Formal investigation into user needs, policy objectives, and existing service provision. Identifies the problem to solve, user groups, and initial technical considerations. Outputs include user research findings, validated user needs, and recommendations on progressing to Alpha.",
+    "Description":"Investigation into user needs, policy objectives, and what services currently exist. Identifies the problem to solve, user groups and user needs.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -191,7 +191,7 @@
     "Taxonomy":"Phase",
     "Item":"Alpha",
     "Slug": "alpha",
-    "Description":"Experimental phase involving rapid prototyping, testing different approaches, validating hypotheses, and identifying risks. Outputs include working prototypes, tested user journeys, refined user stories, and defined MVP scope.",
+    "Description":"Involves building prototypes, testing different approaches, validating hypotheses, and identifying risks. Results include tested user journeys, refined user stories, and defined Beta scope.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -200,7 +200,7 @@
     "Taxonomy":"Phase",
     "Item":"Private Beta",
     "Slug": "private_beta",
-    "Description":"Initial build of the service released to a restricted, invited audience. Service undergoes detailed testing and refinement based on real-world usage, feedback, and analytics. Typically involves controlled access, iterative improvements, and early-stage compliance assessments.",
+    "Description":"Initial build of service released to a limited user group. Includes testing and refinement based on feedback from users.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
