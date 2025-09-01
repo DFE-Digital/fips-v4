@@ -13,16 +13,107 @@ const base = new Airtable({
 }).base(process.env.AIRTABLE_BASE_ID)
 
 // Import controllers
-const productsController = require('./controllers/v1/products')
+const v1productsController = require('./controllers/v1/products')
+const vspkproductsController = require('./controllers/v-spk-assessments/products')
+
+
 
 // v1 routes (default)
-router.get('/v1/products', productsController.index)
-router.get('/v1/product/:id', productsController.show)
-router.get('/v1/product/:id/categories', productsController.categories)
+router.get('/v1/', (req, res) => {
+    // Get product count for homepage
+    const fs = require('fs')
+    const path = require('path')
+    
+    try {
+        const dataPath = path.join(__dirname, 'data/fips.json')
+        const data = fs.readFileSync(dataPath, 'utf8')
+        const allProducts = JSON.parse(data)
+        
+        // Apply same filters as the products controller
+        const excludedParents = [
+            "End User Computing",
+            "Corporate services", 
+            "Shared IT core services",
+            "zBusiness Operations (do not use)",
+            "Voice and Data Network"
+        ]
+        
+        const filteredProducts = allProducts.filter(product => {
+            if (excludedParents.includes(product.Parent)) return false
+            if (product.Parent && product.Parent.includes("(PP)")) return false
+            if (product['Operational Status'] === "New") return false
+            return true
+        })
+        
+        res.render('v1/index', {
+            productCount: filteredProducts.length
+        })
+    } catch (error) {
+        console.error('Error loading product count:', error)
+        res.render('v1/index', {
+            productCount: 0
+        })
+    }
+})
+
+router.get('/v1/products', v1productsController.index)
+router.get('/v1/product/:id', v1productsController.show)
+router.get('/v1/product/:id/categories', v1productsController.categories)
 
 router.get('/v1/about', (req, res) => {
     res.render('v1/about/index')
 })
+
+
+
+
+// v-spk-assessments routes
+router.get('/v-spk-assessments/', (req, res) => {
+    // Get product count for homepage
+    const fs = require('fs')
+    const path = require('path')
+    
+    try {
+        const dataPath = path.join(__dirname, 'data/fips.json')
+        const data = fs.readFileSync(dataPath, 'utf8')
+        const allProducts = JSON.parse(data)
+        
+        // Apply same filters as the products controller
+        const excludedParents = [
+            "End User Computing",
+            "Corporate services", 
+            "Shared IT core services",
+            "zBusiness Operations (do not use)",
+            "Voice and Data Network"
+        ]
+        
+        const filteredProducts = allProducts.filter(product => {
+            if (excludedParents.includes(product.Parent)) return false
+            if (product.Parent && product.Parent.includes("(PP)")) return false
+            if (product['Operational Status'] === "New") return false
+            return true
+        })
+        
+        res.render('v-spk-assessments/index', {
+            productCount: filteredProducts.length
+        })
+    } catch (error) {
+        console.error('Error loading product count:', error)
+        res.render('v-spk-assessments/index', {
+            productCount: 0
+        })
+    }
+})
+
+router.get('/v-spk-assessments/products', vspkproductsController.index)
+router.get('/v-spk-assessments/product/:id', vspkproductsController.show)
+router.get('/v-spk-assessments/product/:id/categories', vspkproductsController.categories)
+
+router.get('/v-spk-assessments/about', (req, res) => {
+    res.render('v-spk-assessments/about/index')
+})
+
+
 
 
 

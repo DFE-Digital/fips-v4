@@ -1,0 +1,102 @@
+{% extends "v-spk-assessments/layouts/main.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+
+{% set pageName = product.Name + " - Categories" %}
+{% set pageDescription = "Categories and components for " + product.Name %}
+{% set nav = 'products' %}
+{% set showNav = true %}
+
+{% block main %}
+
+    <div class="dfe-masthead dfe-masthead--with-links">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <a href="/v-spk-assessments/products" class="govuk-back-link">Back to products</a>
+                    <h1 class="govuk-heading-l dfe-masthead--title">
+                        {{ product.Name }}
+                    </h1>
+                       <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-table__header govuk-!-width-one-quarter">ID</th>
+                                <th class="govuk-table__header govuk-!-width-one-quarter">Phase</th>
+                                <th class="govuk-table__header govuk-!-width-one-quarter">Business area</th>
+                                <th class="govuk-table__header govuk-!-width-one-quarter">Contacts</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell"><span class="govuk-visually-hidden">UniqueID: </span><span title="{{ product.id }}">{{ product.id | truncate(6) }}</span></td>
+                                <td class="govuk-table__cell"><span class="govuk-visually-hidden">Phase: </span>  {% if product.phase %}
+                            {{ govukTag({
+                        text: product.phase,
+                        classes: "govuk-tag--blue"
+                    }) }}
+                        {% endif %}</td>
+                                <td class="govuk-table__cell"><span class="govuk-visually-hidden">Business area: </span>{{ product['Parent'] }}</td>
+                                <td class="govuk-table__cell"><a href="/v-spk-assessments/product/{{ product.id }}#contacts" class="govuk-link">{{ contacts | length }} contacts</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper" id="main-content" role="main"{% if mainClasses %} class="{{ mainClasses }}"{% endif %}>
+
+            <div class="govuk-grid-row">
+
+                <div class="govuk-grid-column-one-third">
+                    <nav aria-label="Product navigation" class="dfe-vertical-nav">
+                        <button type="button" class="dfe-vertical-nav__toggle dfe-js-vertical-nav-toggle" aria-controls="side-navigation" hidden="" aria-expanded="false">
+                            Product navigation
+                        </button>
+                        <ul class="dfe-vertical-nav__section" id="side-navigation">
+                            <li class="dfe-vertical-nav__section-item">
+                                <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/v-spk-assessments/product/{{ product.id }}">Overview</a>
+                            </li>
+                            <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--current">
+                                <a class="dfe-vertical-nav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="/v-spk-assessments/product/{{ product.id }}/categories">Categories</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="govuk-grid-column-two-thirds">
+
+                    <h2 class="govuk-heading-m">Components and technologies</h2>
+                    
+                    {% if allComponents.length > 0 %}
+                        {% set componentRows = [] %}
+                        {% for component in allComponents %}
+                            {% set componentRows = (componentRows.push({
+                                key: {
+                                    text: component.name
+                                },
+                                value: {
+                                    html: '<div>' + (component.description or 'No description available') + '</div>'
+                                }
+                            }), componentRows) %}
+                        {% endfor %}
+
+                        {{ govukSummaryList({
+                            rows: componentRows
+                        }) }}
+
+                      
+                    {% else %}
+                        <p class="govuk-body">No categories or components information available for this product.</p>
+                       
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+{% endblock %}

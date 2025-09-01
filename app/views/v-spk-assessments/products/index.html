@@ -1,0 +1,241 @@
+{% extends "v-spk-assessments/layouts/main.html" %}
+{% from "moj/components/filter/macro.njk" import mojFilter %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{% set pageName = "Search and filter products and services" %}
+{% set pageDescription = "Explore all DfE products and services. Filter by phase, business area, and operational status." %}
+{% set mainClasses="govuk-!-padding-top-0"%}
+{% set nav = 'products' %}
+{% set showNav = true %}
+
+{% block main %}
+
+    <div class="dfe-masthead">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl dfe-masthead--title govuk-!-margin-bottom-0">
+                        {{ pageName }}
+                    </h1>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper" id="main-content" role="main"{% if mainClasses %} class="{{ mainClasses }}"{% endif %}>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    
+                    <!-- MOJ Filter Component -->
+                    <form method="get" action="/v-spk-assessments/products">
+                        {% set filterOptionsHtml %}
+                            {{ govukInput({
+                                id: "keywords",
+                                name: "keywords",
+                                value: filters.keywords,
+                                label: {
+                                    text: "Product name",
+                                    classes: "govuk-label--s"
+                                }
+                            }) }}
+
+                            {% if filterOptions.phases.length > 0 %}
+                                {% set phaseItems = [] %}
+                                {% for phase in filterOptions.phases %}
+                                    {% set phaseItems = (phaseItems.push({
+                                        value: phase.value,
+                                        text: phase.text + " (" + phase.count + ")",
+                                        checked: phase.value in filters.phase
+                                    }), phaseItems) %}
+                                {% endfor %}
+                                
+                                {{ govukCheckboxes({
+                                    idPrefix: "phase",
+                                    name: "phase",
+                                    classes: "govuk-checkboxes--small",
+                                    fieldset: {
+                                        legend: {
+                                            text: "Phase",
+                                            classes: "govuk-fieldset__legend--s"
+                                        }
+                                    },
+                                    items: phaseItems
+                                }) }}
+                            {% endif %}
+
+                            {% if filterOptions.businessAreas.length > 0 %}
+                                {% set businessAreaItems = [] %}
+                                {% for area in filterOptions.businessAreas %}
+                                    {% set businessAreaItems = (businessAreaItems.push({
+                                        value: area.value,
+                                        text: area.text + " (" + area.count + ")",
+                                        checked: area.value in filters['business-area']
+                                    }), businessAreaItems) %}
+                                {% endfor %}
+                                
+                                {{ govukCheckboxes({
+                                    idPrefix: "business-area",
+                                    name: "business-area",
+                                    classes: "govuk-checkboxes--small",
+                                    fieldset: {
+                                        legend: {
+                                            text: "Business area",
+                                            classes: "govuk-fieldset__legend--s"
+                                        }
+                                    },
+                                    items: businessAreaItems
+                                }) }}
+                            {% endif %}
+
+                            {% if filterOptions.parents.length > 0 %}
+                                {% set parentItems = [] %}
+                                {% for parent in filterOptions.parents %}
+                                    {% set parentItems = (parentItems.push({
+                                        value: parent.value,
+                                        text: parent.text + " (" + parent.count + ")",
+                                        checked: parent.value in filters.parent
+                                    }), parentItems) %}
+                                {% endfor %}
+                                
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            Business area
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" style="max-height: 210px; overflow-y: auto; padding-left: 10px; padding-right: 10px; margin-left: -10px;">
+                                            {% for parent in parentItems %}
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="parent-{{ loop.index }}" name="parent" type="checkbox" value="{{ parent.value }}"{% if parent.checked %} checked{% endif %}>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="parent-{{ loop.index }}">
+                                                        {{ parent.text }}
+                                                    </label>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            {% endif %}
+
+
+                        {% endset %}
+
+                        {{ mojFilter({
+                            heading: {
+                                text: "Filter"
+                            },
+                            selectedFilters: {
+                                heading: {
+                                    text: "Selected filters"
+                                },
+                                clearLink: {
+                                    text: "Clear filters",
+                                    href: clearFiltersUrl
+                                },
+                                categories: selectedFilters
+                            } if selectedFilters.length > 0,
+                            optionsHtml: filterOptionsHtml
+                        }) }}
+                    </form>
+
+                </div>
+
+                <div class="govuk-grid-column-two-thirds">
+                    
+                    <!-- Results Summary -->
+                    <div class="govuk-!-margin-bottom-4">
+                        <p class="govuk-body">
+                            Showing {{ pagination.totalResults }} products and services
+                            {% if pagination.totalPages > 1 %}
+                                (page {{ pagination.currentPage }} of {{ pagination.totalPages }})
+                            {% endif %}
+                        </p>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                    </div>
+
+                    <!-- Products Grid -->
+                    {% if products.length > 0 %}
+                        <ul class="dfe-chevron-card__list">
+                            {% for product in products %}
+                                <li class="dfe-chevron-card">
+                                    <div class="dfe-chevron-card__wrapper">
+                                        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                                            <a class="govuk-link govuk-link--no-visited-state" href="/v-spk-assessments/product/{{ product.id }}">
+                                                {{ product.Name }}
+                                            </a>
+                                        </h3>
+                                        <p class="dfe-chevron-card__description govuk-body govuk-body-s">
+                                            {{ product.Description | truncate(140) if product.Description  else 'No description available' }}
+                                        </p>
+                                        
+                                        <!-- Meta information -->
+                                        <div class="govuk-!-margin-top-2">
+                                            {% if product.phase %}
+                                                <span class="govuk-tag govuk-tag--blue govuk-!-font-size-16">{{ product.phase }}</span>
+                                            {% endif %}
+                                            {% if product['business-area'] %}
+                                                <span class="govuk-tag govuk-tag--green govuk-!-font-size-16">{{ product['business-area'] }}</span>
+                                            {% endif %}
+                                           
+                                        </div>
+                                        
+                                        <a class="dfe-chevron-card__link" href="/v-spk-assessments/product/{{ product.id }}" aria-hidden="true" tabindex="-1">
+                                            <span class="govuk-visually-hidden">{{ product.Name }}</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                       
+                            <p class="govuk-body">No products found matching your criteria.</p>
+                            <p class="govuk-body">
+                                <a href="/v-spk-assessments/products" class="govuk-link">Clear all filters</a> to see all products.
+                            </p>
+                      
+                    {% endif %}
+
+                    <!-- Pagination -->
+                    {% if pagination.totalPages > 1 %}
+                        {% set paginationItems = [] %}
+                        
+                        {% for pageNum in range(1, pagination.totalPages + 1) %}
+                            {% if pageNum == pagination.currentPage %}
+                                {% set paginationItems = (paginationItems.push({
+                                    number: pageNum,
+                                    current: true
+                                }), paginationItems) %}
+                            {% elif pageNum == 1 or pageNum == pagination.totalPages or (pageNum >= pagination.currentPage - 2 and pageNum <= pagination.currentPage + 2) %}
+                                {% set paginationItems = (paginationItems.push({
+                                    number: pageNum,
+                                    href: "/v-spk-assessments/products?" + (baseQuery + ("&" if baseQuery else "") + "page=" + pageNum)
+                                }), paginationItems) %}
+                            {% elif (pageNum == pagination.currentPage - 3 or pageNum == pagination.currentPage + 3) and pagination.totalPages > 7 %}
+                                {% set paginationItems = (paginationItems.push({
+                                    ellipsis: true
+                                }), paginationItems) %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {{ govukPagination({
+                            previous: {
+                                    href: "/v-spk-assessments/products?" + (baseQuery + ("&" if baseQuery else "") + "page=" + (pagination.currentPage - 1))
+                            } if pagination.hasPrevPage,
+                            next: {
+                                href: "/v-spk-assessments/products?" + (baseQuery + ("&" if baseQuery else "") + "page=" + (pagination.currentPage + 1))
+                            } if pagination.hasNextPage,
+                            items: paginationItems
+                        }) }}
+                    {% endif %}
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+{% endblock %}
