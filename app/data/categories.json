@@ -173,7 +173,7 @@
     "Taxonomy":"Phase",
     "Item":"Triage",
     "Slug": "triage",
-    "Description":null,
+    "Description":"",
     "Validated":null,
     "In version":1.0,
     "Comments":"This is added as part of the central ops process"

@@ -51,12 +51,7 @@
                                                     {{ item.Description }}
                                                 </p>
                                             {% endif %}
-                                            {% if item.Comments %}
-                                                <p class="govuk-body-s govuk-!-margin-top-2 govuk-!-colour-dark-grey">
-                                                    <strong>Examples:</strong> {{ item.Comments }}
-                                                </p>
-                                            {% endif %}
-                                           
+                                        
                                             <a class="dfe-chevron-card__link" href="/v1/products?{{ taxonomy | lower | replace(' ', '-') }}={{ item.Slug or item.Item | lower | replace(' ', '_') }}" aria-hidden="true" tabindex="-1">
                                                 <span class="govuk-visually-hidden">{{ item.Item }}</span>
                                             </a>
