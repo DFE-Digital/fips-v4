@@ -12,7 +12,7 @@
     "Taxonomy":"Channels",
     "Item":"Native app",
     "Slug": "native_app",
-    "Description":"Dedicated applications built specifically for mobile platforms (iOS, Android) offering enhanced performance and device integration.",
+    "Description":"Applications built specifically for mobile platforms (iOS, Android) offering enhanced performance and device integration.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -60,7 +60,7 @@
     "Description":null,
     "Validated":null,
     "In version":1.0,
-    "Comments":"Letters, Newspapers, Flyers, Brochures"
+    "Comments":"Letters, newspapers, flyers, brochures"
   },
   {
     "Taxonomy":"Channels",
@@ -164,7 +164,7 @@
     "Taxonomy":"Phase",
     "Item":"Explore",
     "Slug": "explore",
-    "Description":"Initial exploration of a potential problem, opportunity, or policy area. Includes research and stakeholder conversations, no formal commitment or funding yet agreed.",
+    "Description":"Initial investigation of a potential problem, opportunity, or policy area. Includes research and stakeholder conversations, no formal commitment or funding agreed.",
     "Validated":null,
     "In version":1.0,
     "Comments":"This is added as part of the central ops process"
@@ -182,7 +182,7 @@
     "Taxonomy":"Phase",
     "Item":"Discovery",
     "Slug": "discovery",
-    "Description":"Investigation into user needs, policy objectives, and what services currently exist. Identifies the problem to solve, user groups and user needs.",
+    "Description":"Exploring the problem space, policy objectives and what services exist. Identifies user needs and groups.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -191,14 +191,14 @@
     "Taxonomy":"Phase",
     "Item":"Alpha",
     "Slug": "alpha",
-    "Description":"Involves building prototypes, testing different approaches, validating hypotheses, and identifying risks. Results include tested user journeys, refined user stories, and defined Beta scope.",
+    "Description":"Involves designing, building and testing prototypes, validating hypotheses, and identifying risks. Results include a defined scope for beta.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
   },
   {
     "Taxonomy":"Phase",
-    "Item":"Private Beta",
+    "Item":"Private beta",
     "Slug": "private_beta",
     "Description":"Initial build of service released to a limited user group. Includes testing and refinement based on feedback from users.",
     "Validated":null,
@@ -207,9 +207,9 @@
   },
   {
     "Taxonomy":"Phase",
-    "Item":"Public Beta",
+    "Item":"Public beta",
     "Slug": "public_beta",
-    "Description":"Service openly available to the public, clearly marked as 'beta'. Continues iterative improvements and scalability testing, ensuring it meets all Service Standard criteria. Analytics, user feedback, and robust monitoring inform continuous improvements towards becoming a stable live service.",
+    "Description":"Service available to public. Continuous improvement and scalability testing, working towards becoming a stable live service.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -218,7 +218,7 @@
     "Taxonomy":"Phase",
     "Item":"Live",
     "Slug": "live",
-    "Description":"Fully operational, widely available service meeting the GOV.UK Service Standard. Ongoing service management, continuous improvement, monitoring, and assurance activities are in place. Clear governance, support processes, and service ownership established.",
+    "Description":"Fully operational service. Continuous improvement, monitoring, and assurance are in place. Clear governance, support processes, and service ownership established.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -227,7 +227,7 @@
     "Taxonomy":"Phase",
     "Item":"Decomissioning",
     "Slug": "decomissioning",
-    "Description":"Actively in the process of winding down the service. Users are being migrated, data archived, and activities managed to safely close the service. Communications and transition plans in place to minimise user impact.",
+    "Description":"Process to retire service. Users migrated, if required. Data archived, and activities managed to safely close service.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -236,7 +236,7 @@
     "Taxonomy":"Phase",
     "Item":"Decomissioned",
     "Slug": "decomissioned",
-    "Description":"Service has formally ended, is no longer available, and all operations and user access have ceased. Relevant data archived, users migrated to alternative services if required, and formal closure documentation completed.",
+    "Description":"Service has formally ended. Relevant data archived, users migrated, and formal closure documentation completed.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -381,7 +381,7 @@
     "Taxonomy":"Type",
     "Item":"Transactional",
     "Slug": "transactional",
-    "Description":"Services that involve an exchange\u2014applying, submitting, paying, registering, booking, or claiming something.",
+    "Description":"Services involve an exchange. For example, apply, submit, pay, register, book, or claim something.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -399,7 +399,7 @@
     "Taxonomy":"Type",
     "Item":"Data collection and reporting",
     "Slug": "data_collection_and_reporting",
-    "Description":"Used to submit, validate, and view data as required by DfE",
+    "Description":"Used to submit, validate, and view data as required by DfE.",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -408,7 +408,7 @@
     "Taxonomy":"Type",
     "Item":"API",
     "Slug": "api",
-    "Description":"API-Only service",
+    "Description":"API-only service",
     "Validated":null,
     "In version":1.0,
     "Comments":null
@@ -417,7 +417,7 @@
     "Taxonomy":"Type",
     "Item":"Campaign",
     "Slug": "campaign",
-    "Description":null,
+    "Description":"A time-limited or specialised communication government campaign.",
     "Validated":null,
     "In version":null,
     "Comments":null
