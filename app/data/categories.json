@@ -57,19 +57,19 @@
     "Taxonomy":"Channel",
     "Item":"Print media",
     "Slug": "print_media",
-    "Description":null,
+    "Description":"Includes letters, newpapers, flyers and brochures.",
     "Validated":null,
     "In version":1.0,
-    "Comments":"Letters, newspapers, flyers, brochures"
+    "Comments":null
   },
   {
     "Taxonomy":"Channel",
     "Item":"Other digital media",
     "Slug": "other_digital_media",
-    "Description":null,
+    "Description":"Includes digital billboards, cinema and TV adverts.",
     "Validated":null,
     "In version":1.0,
-    "Comments":"Digital billboards, cinema, TV adverts"
+    "Comments":null
   },
   {
     "Taxonomy":"Life Stages",
@@ -153,30 +153,21 @@
   },
   {
     "Taxonomy":"Phase",
-    "Item":"Request",
-    "Slug": "request",
-    "Description":null,
-    "Validated":null,
-    "In version":1.0,
-    "Comments":"This is added as part of the central ops process"
-  },
-  {
-    "Taxonomy":"Phase",
     "Item":"Explore",
     "Slug": "explore",
     "Description":"Initial investigation of a potential problem, opportunity, or policy area. Includes research and stakeholder conversations, no formal commitment or funding agreed.",
     "Validated":null,
     "In version":1.0,
-    "Comments":"This is added as part of the central ops process"
+    "Comments":null
   },
   {
     "Taxonomy":"Phase",
     "Item":"Triage",
     "Slug": "triage",
-    "Description":"",
+    "Description":"A structured review to route incoming requests, ensuring they're addressed efficiently and aligned with strategic goals.",
     "Validated":null,
     "In version":1.0,
-    "Comments":"This is added as part of the central ops process"
+    "Comments":null
   },
   {
     "Taxonomy":"Phase",
@@ -1095,7 +1086,7 @@
     "Taxonomy":"SubGroup",
     "Item":"CXD",
     "Slug": "cxd",
-    "Description":"Customer experience and design",
+    "Description":"Customer experience and design.",
     "Parent": "Operations and Infrastructure",
     "Validated":null,
     "In version":null,
@@ -1105,7 +1096,7 @@
     "Taxonomy":"SubGroup",
     "Item":"Funding",
     "Slug": "funding",
-    "Description":"Funding services",
+    "Description":"Funding services.",
     "Parent": "Operations and Infrastructure",
     "Validated":null,
     "In version":null,
