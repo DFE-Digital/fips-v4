@@ -1,0 +1,1222 @@
+[
+  {
+    "id": "l1-adult-learner-18",
+    "label": "Adult learner (18+)",
+    "level": 1,
+    "aliases": [],
+    "children": [
+      {
+        "id": "l2-adult-learner-18-adult-in-work-based-learning-or-training",
+        "label": "Adult in work based learning or training",
+        "level": 2,
+        "aliases": [
+          "Apprentice"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-adult-learner-18-adult-learner-in-non-work-based-learning-or-training",
+        "label": "Adult learner in non-work based learning or training",
+        "level": 2,
+        "aliases": [
+          "Homeless learner",
+          "Independent student",
+          "Offender learner"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-adult-learner-18-student-further-education",
+        "label": "Student (further education)",
+        "level": 2,
+        "aliases": [
+          "College student",
+          "FE student",
+          "Further education student"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-adult-learner-18-student-higher-education",
+        "label": "Student (higher education)",
+        "level": 2,
+        "aliases": [
+          "HE student",
+          "Higher education student",
+          "University student"
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-careers-adviser-or-work-coach",
+    "label": "Careers adviser or work coach",
+    "level": 1,
+    "aliases": [],
+    "children": [
+      {
+        "id": "l2-careers-adviser-or-work-coach-independent-careers-adviser",
+        "label": "Independent careers adviser",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-careers-adviser-or-work-coach-national-careers-service-careers-adviser",
+        "label": "National careers service careers adviser",
+        "level": 2,
+        "aliases": [
+          "NCS careers adviser"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-careers-adviser-or-work-coach-work-coach",
+        "label": "Work coach",
+        "level": 2,
+        "aliases": [
+          "Mentor (work)",
+          "Work mentor"
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-child-or-young-person",
+    "label": "Child or young person",
+    "level": 1,
+    "aliases": [],
+    "children": [
+      {
+        "id": "l2-child-or-young-person-child-early-years-age",
+        "label": "Child (early years age)",
+        "level": 2,
+        "aliases": [
+          "Child (0-5)",
+          "Pupil (early years)",
+          "Reception age pupil"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-child-or-young-person-child-primary-age",
+        "label": "Child (primary age)",
+        "level": 2,
+        "aliases": [
+          "Child (5-7)",
+          "Child (key stage 1)",
+          "Key stage 1 pupil",
+          "KS1 pupil",
+          "Pupil (key stage 1)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-child-or-young-person-child-secondary-age-up-to-16",
+        "label": "Child (secondary age up to 16)",
+        "level": 2,
+        "aliases": [
+          "Child (11-16)",
+          "Child (key stage 3)",
+          "Child (key stage 4)",
+          "Key stage 3 pupil",
+          "Key stage 4 pupil",
+          "KS3 pupil",
+          "KS4 pupil",
+          "Pupil (key stage 3)",
+          "Pupil (key stage 4)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-child-or-young-person-young-person-16-18",
+        "label": "Young person (16-18)",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-child-or-young-person-young-person-with-send-16-25",
+        "label": "Young person with SEND (16-25)",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-department-for-education-workforce",
+    "label": "Department for Education workforce",
+    "level": 1,
+    "aliases": [
+      "DfE workforce"
+    ],
+    "children": [
+      {
+        "id": "l2-department-for-education-workforce-colleague-supporting-dfe-users",
+        "label": "Colleague supporting DfE users",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-department-for-education-workforce-colleague-supporting-external-stakeholders",
+        "label": "Colleague supporting external stakeholders",
+        "level": 2,
+        "aliases": [
+          "Colleague supporting end customers"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-department-for-education-workforce-colleague-using-data",
+        "label": "Colleague using data",
+        "level": 2,
+        "aliases": [
+          "Data user in the department"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-department-for-education-workforce-colleague-using-digital-to-deliver-services",
+        "label": "Colleague using digital to deliver services",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-education-provider-and-early-years-workforce",
+    "label": "Education provider and early years workforce",
+    "level": 1,
+    "aliases": [],
+    "children": [
+      {
+        "id": "l2-education-provider-and-early-years-workforce-academy-and-trust-workforce",
+        "label": "Academy and trust workforce",
+        "level": 2,
+        "aliases": [
+          "Academies workforce",
+          "Trusts workforce"
+        ],
+        "children": [
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-governor",
+            "label": "Academy governor",
+            "level": 3,
+            "aliases": [
+              "Chair of governors (academy)",
+              "Governor (academy)",
+              "School governor (academy)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-headteacher-primary",
+            "label": "Academy headteacher (primary)",
+            "level": 3,
+            "aliases": [
+              "Head teacher (primary) (academy)",
+              "Headteacher (primary) (academy)",
+              "Primary academy headteacher"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-headteacher-secondary",
+            "label": "Academy headteacher (secondary)",
+            "level": 3,
+            "aliases": [
+              "Head teacher (secondary) (academy)",
+              "Headteacher (secondary) (academy)",
+              "Secondary academy headteacher"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-higher-level-teaching-assistant",
+            "label": "Academy higher level teaching assistant",
+            "level": 3,
+            "aliases": [
+              "HLTA (academy)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-school-business-professional",
+            "label": "Academy school business professional",
+            "level": 3,
+            "aliases": [
+              "Clerk to the trustees",
+              "Governance professional (academy)",
+              "School business manager (academy)",
+              "School business professional (academy)",
+              "School finance officer (academy)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-support-staff",
+            "label": "Academy support staff",
+            "level": 3,
+            "aliases": [
+              "Admin staff (academy)",
+              "Administrative staff (academy)",
+              "Catering staff (academy)",
+              "Librarian (academy)",
+              "School caretaker (academy)",
+              "School office manager (academy)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-teacher-primary",
+            "label": "Academy teacher (primary)",
+            "level": 3,
+            "aliases": [
+              "Primary academy teacher",
+              "Teacher (primary) (academy)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-teacher-secondary",
+            "label": "Academy teacher (secondary)",
+            "level": 3,
+            "aliases": [
+              "Secondary academy teacher",
+              "Teacher (secondary) (academy)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-teaching-assistant",
+            "label": "Academy teaching assistant",
+            "level": 3,
+            "aliases": [
+              "TA (academy)",
+              "Teaching assistant (academy)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-academy-and-trust-workforce-academy-trustee",
+            "label": "Academy trustee",
+            "level": 3,
+            "aliases": [
+              "Chair of trustees",
+              "Trustee (academy)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "l2-education-provider-and-early-years-workforce-alternative-provision-setting-workforce",
+        "label": "Alternative provision setting workforce",
+        "level": 2,
+        "aliases": [
+          "AP workforce"
+        ],
+        "children": [
+          {
+            "id": "l3-education-provider-and-early-years-workforce-alternative-provision-setting-workforce-alternative-provision-setting-mentor",
+            "label": "Alternative provision setting mentor",
+            "level": 3,
+            "aliases": [
+              "AP mentor",
+              "Mentor (alternative provision)",
+              "Mentor (AP)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-alternative-provision-setting-workforce-alternative-provision-setting-support-assistant",
+            "label": "Alternative provision setting support assistant",
+            "level": 3,
+            "aliases": [
+              "AP support assistant",
+              "Learning support assistant (alternative provision)",
+              "LSA (alternative provision)",
+              "Support assistant (alternative provision)",
+              "Support assistant (AP)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-alternative-provision-setting-workforce-alternative-provision-setting-teacher",
+            "label": "Alternative provision setting teacher",
+            "level": 3,
+            "aliases": [
+              "AP teacher",
+              "Teacher (alternative provision)",
+              "Teacher (AP)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "l2-education-provider-and-early-years-workforce-early-years-workforce",
+        "label": "Early years workforce",
+        "level": 2,
+        "aliases": [
+          "Child minder",
+          "Childminder",
+          "Early years educator",
+          "EY workforce",
+          "Nanny",
+          "Nursery manager",
+          "Nursery worker",
+          "Playgroup worker"
+        ],
+        "children": [
+          {
+            "id": "l3-education-provider-and-early-years-workforce-early-years-workforce-early-years-teacher",
+            "label": "Early years teacher",
+            "level": 3,
+            "aliases": [
+              "EY educator",
+              "EY teacher"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "l2-education-provider-and-early-years-workforce-further-education-workforce",
+        "label": "Further education workforce",
+        "level": 2,
+        "aliases": [
+          "FE workforce"
+        ],
+        "children": [
+          {
+            "id": "l3-education-provider-and-early-years-workforce-further-education-workforce-college-leader",
+            "label": "College leader",
+            "level": 3,
+            "aliases": [
+              "College principal"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-further-education-workforce-college-support-staff",
+            "label": "College support staff",
+            "level": 3,
+            "aliases": [
+              "College administrative staff",
+              "College business manager",
+              "FEI business manager",
+              "Further education institute business manager"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-further-education-workforce-lecturer-further-education",
+            "label": "Lecturer (further education)",
+            "level": 3,
+            "aliases": [
+              "College lecturer",
+              "College teaching staff",
+              "FE teacher",
+              "Lecturer (college)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "l2-education-provider-and-early-years-workforce-higher-education-workforce",
+        "label": "Higher education workforce",
+        "level": 2,
+        "aliases": [
+          "HE workforce"
+        ],
+        "children": [
+          {
+            "id": "l3-education-provider-and-early-years-workforce-higher-education-workforce-lecturer-higher-education",
+            "label": "Lecturer (higher education)",
+            "level": 3,
+            "aliases": [
+              "Assistant professor",
+              "Associate professor",
+              "Lecturer (university)",
+              "Professor",
+              "Reader",
+              "University lecturer"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-higher-education-workforce-university-leader",
+            "label": "University leader",
+            "level": 3,
+            "aliases": [
+              "Chancellor (university)",
+              "University chancellor",
+              "University vice-chancellor",
+              "Vice-chancellor (university)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-higher-education-workforce-university-support-staff",
+            "label": "University support staff",
+            "level": 3,
+            "aliases": [
+              "Admin staff (university)",
+              "Administrative staff (university)",
+              "HEI support staff",
+              "Higher education institute support staff",
+              "Librarian (higher education institute)",
+              "University admin staff",
+              "University admissions department staff",
+              "University IT department staff",
+              "University librarian"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "l2-education-provider-and-early-years-workforce-school-workforce",
+        "label": "School workforce",
+        "level": 2,
+        "aliases": [
+          "Workforce (school)"
+        ],
+        "children": [
+          {
+            "id": "l3-education-provider-and-early-years-workforce-school-workforce-headteacher-primary-school",
+            "label": "Headteacher (primary school)",
+            "level": 3,
+            "aliases": [
+              "Acting head teacher (primary school)",
+              "Acting headteacher (primary school)",
+              "Head teacher (primary school)",
+              "Primary school headteacher",
+              "Retired primary school headteacher"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-school-workforce-headteacher-secondary-school",
+            "label": "Headteacher (secondary school)",
+            "level": 3,
+            "aliases": [
+              "Acting head teacher (secondary school)",
+              "Acting headteacher (secondary school)",
+              "Head teacher (secondary school)",
+              "Retired secondary school headteacher",
+              "Secondary school headteacher"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-school-workforce-higher-level-teaching-assistant",
+            "label": "Higher level teaching assistant",
+            "level": 3,
+            "aliases": [
+              "HLTA (school)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-school-workforce-school-business-professional",
+            "label": "School business professional",
+            "level": 3,
+            "aliases": [
+              "Clerk to the school governors",
+              "Governance professional (school)",
+              "SBM",
+              "School business manager",
+              "School finance officer"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-school-workforce-school-governor",
+            "label": "School governor",
+            "level": 3,
+            "aliases": [
+              "Chair of governors",
+              "Governor (school)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-school-workforce-school-support-staff",
+            "label": "School support staff",
+            "level": 3,
+            "aliases": [
+              "Admin staff (school)",
+              "Administrative staff (school)",
+              "Caretaker (school)",
+              "Catering staff (school)",
+              "Librarian (school)",
+              "School administrator",
+              "School caretaker",
+              "School librarian",
+              "School office manager",
+              "School secretary",
+              "School security staff",
+              "School technician"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-school-workforce-teacher-primary-school",
+            "label": "Teacher (primary school)",
+            "level": 3,
+            "aliases": [
+              "Overseas primary school teacher",
+              "Primary school supply teacher",
+              "Primary school teacher",
+              "Retired primary school teacher",
+              "Supply teacher (primary school)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-school-workforce-teacher-secondary-school",
+            "label": "Teacher (secondary school)",
+            "level": 3,
+            "aliases": [
+              "Overseas secondary school teacher",
+              "Retired secondary school teacher",
+              "Secondary school supply teacher",
+              "Secondary school teacher",
+              "Supply teacher (secondary school)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-school-workforce-teaching-assistant",
+            "label": "Teaching assistant",
+            "level": 3,
+            "aliases": [
+              "Learning support assistant",
+              "LSA (school)",
+              "TA (school)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "l2-education-provider-and-early-years-workforce-send-professional",
+        "label": "SEND professional",
+        "level": 2,
+        "aliases": [
+          "LA SEND professional",
+          "LA SEND worker",
+          "Local authority SEND professional",
+          "Local authority SEND worker",
+          "SEND professional (local authority)",
+          "Special Educational Needs and Disability professional (local authority)"
+        ],
+        "children": [
+          {
+            "id": "l3-education-provider-and-early-years-workforce-send-professional-echp-coordinator",
+            "label": "ECHP coordinator",
+            "level": 3,
+            "aliases": [
+              "ECH plans coordinator",
+              "Education",
+              "Education health and care (EHC) plans coordinator",
+              "health and care (EHC) plans coordinator"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-send-professional-sen-coordinator",
+            "label": "SEN coordinator",
+            "level": 3,
+            "aliases": [
+              "SENCO",
+              "Special Educational Needs coordinator"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-send-professional-send-speech-and-language-therapist",
+            "label": "SEND speech and language therapist",
+            "level": 3,
+            "aliases": [
+              "Speech and language therapist (SEND)"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-send-professional-send-teacher",
+            "label": "SEND teacher",
+            "level": 3,
+            "aliases": [
+              "Special Educational Needs and Disabilities teacher"
+            ]
+          },
+          {
+            "id": "l3-education-provider-and-early-years-workforce-send-professional-send-teaching-assistant",
+            "label": "SEND teaching assistant",
+            "level": 3,
+            "aliases": [
+              "Teaching assistant (SEND)"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l1-employer",
+    "label": "Employer",
+    "level": 1,
+    "aliases": [],
+    "children": [
+      {
+        "id": "l2-employer-employer-1-249-employees",
+        "label": "Employer (1-249 employees)",
+        "level": 2,
+        "aliases": [
+          "Apprenticeship provider (1-249 employees)",
+          "Employer of an apprentice (1-249 employees)",
+          "Employer provider (1-249 employees)",
+          "Employer workforce (medium sized business)",
+          "Employer workforce (small sized business)",
+          "Medium employer (workforce)",
+          "Small and medium sized enterprise employer",
+          "Small employer (workforce)",
+          "SME employer",
+          "Workforce (medium sized business)",
+          "Workforce (small sized business)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-employer-employer-250-or-more-employees",
+        "label": "Employer (250 or more employees)",
+        "level": 2,
+        "aliases": [
+          "Apprenticeship provider (250 or more employees)",
+          "Employer of an apprentice (250 or more employees)",
+          "Employer provider (250 or more employees)",
+          "Employer workforce (250 or more employees)",
+          "Employer workforce (large sized business)",
+          "Large employer (workforce)",
+          "Workforce (large sized business)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-employer-self-employed-person",
+        "label": "Self-employed person",
+        "level": 2,
+        "aliases": [
+          "Apprenticeship provider (self employed person)",
+          "Employer of an apprentice (self employed person)",
+          "Employer provider (self employed person)",
+          "Partnership",
+          "Self employed person",
+          "Sole trader"
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-local-authority-workforce",
+    "label": "Local authority workforce",
+    "level": 1,
+    "aliases": [
+      "LA workforce"
+    ],
+    "children": [
+      {
+        "id": "l2-local-authority-workforce-business-support-officer-local-authority",
+        "label": "Business support officer (local authority)",
+        "level": 2,
+        "aliases": [
+          "LA business support officer",
+          "Local authority business support officer"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-local-authority-workforce-digital-professional-local-authority",
+        "label": "Digital professional (local authority)",
+        "level": 2,
+        "aliases": [
+          "LA digital professional",
+          "Local authority digital professional"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-local-authority-workforce-finance-support-officer-local-authority",
+        "label": "Finance support officer (local authority)",
+        "level": 2,
+        "aliases": [
+          "LA finance support officer",
+          "Local authority finance support officer"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-local-authority-workforce-senior-leader-local-authority",
+        "label": "Senior leader (local authority)",
+        "level": 2,
+        "aliases": [
+          "Director of Education (local authority)",
+          "Director of Education and Care Service (local authority)",
+          "Education Director (local authority)",
+          "LA senior leader",
+          "Local authority senior leader"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-local-authority-workforce-technology-professional-local-authority",
+        "label": "Technology professional (local authority)",
+        "level": 2,
+        "aliases": [
+          "LA technology professional",
+          "Local authority technology professional"
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-neet-or-career-seeker",
+    "label": "NEET or career seeker",
+    "level": 1,
+    "aliases": [
+      "Career seeker"
+    ],
+    "children": [
+      {
+        "id": "l2-neet-or-career-seeker-adult-19-25-neet",
+        "label": "Adult (19-25) (NEET)",
+        "level": 2,
+        "aliases": [
+          "employment or training (19-25)",
+          "NEET (19-25)",
+          "Not in education",
+          "Young people not in education"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-neet-or-career-seeker-adult-career-seeker-starter-or-changer",
+        "label": "Adult career seeker (starter or changer)",
+        "level": 2,
+        "aliases": [
+          "Career seeker (adult)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-neet-or-career-seeker-young-person-16-18-career-seeker",
+        "label": "Young person (16-18) (career seeker)",
+        "level": 2,
+        "aliases": [
+          "Career seeker (16-18)",
+          "Career seeking young person (16-18)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-neet-or-career-seeker-young-person-16-18-neet",
+        "label": "Young person (16-18) (NEET)",
+        "level": 2,
+        "aliases": [
+          "employment or training (16-18)",
+          "NEET person (16-18)",
+          "Young person not in education"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-neet-or-career-seeker-young-person-with-send-16-25-career-seeker",
+        "label": "Young person with SEND (16-25) (career seeker)",
+        "level": 2,
+        "aliases": [
+          "Career seeker with SEND (16-25)",
+          "Career seeking young person with SEND (16-25)"
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-parent-or-carer",
+    "label": "Parent or carer",
+    "level": 1,
+    "aliases": [
+      "Carer or parent"
+    ],
+    "children": [
+      {
+        "id": "l2-parent-or-carer-expectant-parent",
+        "label": "Expectant parent",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-parent-or-carer-parent-or-carer-of-adult-learner",
+        "label": "Parent or carer of adult learner",
+        "level": 2,
+        "aliases": [
+          "Adoptive parent of adult learner",
+          "Carer of adult learner",
+          "Dad of adult learner",
+          "Father of adult learner",
+          "Grandfather of adult learner",
+          "Grandmother of adult learner",
+          "Grandparent of adult learner",
+          "Mother of adult learner",
+          "Mum of adult learner",
+          "Parent of adult learner"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-parent-or-carer-parent-or-carer-of-career-seeker",
+        "label": "Parent or carer of career seeker",
+        "level": 2,
+        "aliases": [
+          "Adoptive parent of career seeker",
+          "Carer of career seeker",
+          "Dad of career seeker",
+          "Father of career seeker",
+          "Foster parent of career seeker",
+          "Grandfather of career seeker",
+          "Grandmother of career seeker",
+          "Grandparent of career seeker",
+          "Guardian of career seeker",
+          "Mother of career seeker",
+          "Mum of career seeker",
+          "Parent of career seeker"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-parent-or-carer-parent-or-carer-of-child-early-years-age",
+        "label": "Parent or carer of child (early years age)",
+        "level": 2,
+        "aliases": [
+          "Adoptive parent of child (early years age)",
+          "Carer of child (early years age)",
+          "Dad of child (early years age)",
+          "Father of child (early years age)",
+          "Foster parent of child (early years age)",
+          "Grandfather of child (early years age)",
+          "Grandmother of child (early years age)",
+          "Grandparent of child (early years age)",
+          "Guardian of child (early years age)",
+          "Mother of child (early years age)",
+          "Mum of child (early years age)",
+          "Parent of child (early years age)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-parent-or-carer-parent-or-carer-of-child-primary-age",
+        "label": "Parent or carer of child (primary age)",
+        "level": 2,
+        "aliases": [
+          "Adoptive parent of child (primary age)",
+          "Carer of child (primary age)",
+          "Dad of child (primary age)",
+          "Father of child (primary age)",
+          "Foster parent of child (primary age)",
+          "Grandfather of child (primary age)",
+          "Grandmother of child (primary age)",
+          "Grandparent of child (primary age)",
+          "Guardian of child (primary age)",
+          "Mother of child (primary age)",
+          "Mum of child (primary age)",
+          "Parent of child (primary age)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-parent-or-carer-parent-or-carer-of-child-secondary-age",
+        "label": "Parent or carer of child (secondary age)",
+        "level": 2,
+        "aliases": [
+          "Adoptive parent of child (secondary age)",
+          "Carer of child (secondary age)",
+          "Dad of child (secondary age)",
+          "Father of child (secondary age)",
+          "Foster parent of child (secondary age)",
+          "Grandfather of child (secondary age)",
+          "Grandmother of child (secondary age)",
+          "Grandparent of child (secondary age)",
+          "Guardian of child (secondary age)",
+          "Mother of child (secondary age)",
+          "Mum of child (secondary age)",
+          "Parent of child (secondary age)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-parent-or-carer-parent-or-carer-of-child-send",
+        "label": "Parent or carer of child (SEND)",
+        "level": 2,
+        "aliases": [
+          "Adoptive parent of child (SEND)",
+          "Carer of child (SEND)",
+          "Dad of child (SEND)",
+          "Father of child (SEND)",
+          "Foster parent of child (SEND)",
+          "Grandfather of child (SEND)",
+          "Grandmother of child (SEND)",
+          "Grandparent of child (SEND)",
+          "Guardian of child (SEND)",
+          "Mother of child (SEND)",
+          "Mum of child (SEND)",
+          "Parent of child (SEND)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-parent-or-carer-parent-or-carer-of-young-person-16-18",
+        "label": "Parent or carer of young person (16-18)",
+        "level": 2,
+        "aliases": [
+          "Adoptive parent of young person (16-18)",
+          "Carer of young person (16-18)",
+          "Dad of young person (16-18)",
+          "Father of young person (16-18)",
+          "Foster parent of young person (16-18)",
+          "Grandfather of young person (16-18)",
+          "Grandmother of young person (16-18)",
+          "Grandparent of young person (16-18)",
+          "Guardian of young person (16-18)",
+          "Mother of young person (16-18)",
+          "Mum of young person (16-18)",
+          "Parent of young person (16-18)"
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-professional-external-user-of-dfe-data",
+    "label": "Professional external user of DfE data",
+    "level": 1,
+    "aliases": [
+      "External user of DfE data for analysis",
+      "External user of DfE data for communication",
+      "External user of DfE data for research"
+    ],
+    "children": [
+      {
+        "id": "l2-professional-external-user-of-dfe-data-colleague-in-another-part-of-government-data-user",
+        "label": "Colleague in another part of government (data user)",
+        "level": 2,
+        "aliases": [
+          "OGD colleague (data user)",
+          "Other government department colleague (data user)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-professional-external-user-of-dfe-data-journalist-data-user",
+        "label": "Journalist (data user)",
+        "level": 2,
+        "aliases": [
+          "Member of the press (data user)",
+          "Press (member of the) (data user)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-professional-external-user-of-dfe-data-member-of-a-professional-network-data-user",
+        "label": "Member of a professional network (data user)",
+        "level": 2,
+        "aliases": [
+          "Professional network member (data user)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-professional-external-user-of-dfe-data-professional-representative-bodies-workforce-data-user",
+        "label": "Professional representative bodies workforce (data user)",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-professional-external-user-of-dfe-data-researcher-data-user",
+        "label": "Researcher (data user)",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-professional-external-user-of-dfe-data-trade-union-bodies-workforce-data-user",
+        "label": "Trade union bodies workforce (data user)",
+        "level": 2,
+        "aliases": [
+          "TU bodies workforce (data user)"
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-social-care-workforce",
+    "label": "Social care workforce",
+    "level": 1,
+    "aliases": [],
+    "children": [
+      {
+        "id": "l2-social-care-workforce-children-s-care-home-workforce",
+        "label": "Children's care home workforce",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-social-care-workforce-children-s-centre-staff-member",
+        "label": "Children's centre staff member",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-social-care-workforce-early-intervention-practitioner",
+        "label": "Early intervention practitioner",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-social-care-workforce-early-intervention-support-worker",
+        "label": "Early intervention support worker",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-social-care-workforce-family-hub-practitioner",
+        "label": "Family hub practitioner",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-social-care-workforce-family-support-worker",
+        "label": "Family support worker",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-social-care-workforce-personal-adviser-social-care-workforce",
+        "label": "Personal adviser (social care workforce)",
+        "level": 2,
+        "aliases": [
+          "Social care workforce (personal adviser)"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-social-care-workforce-social-worker",
+        "label": "Social worker",
+        "level": 2,
+        "aliases": [],
+        "children": [
+          {
+            "id": "l3-social-care-workforce-social-worker-chief-social-worker-for-children-and-families",
+            "label": "Chief Social Worker for Children and Families",
+            "level": 3,
+            "aliases": []
+          },
+          {
+            "id": "l3-social-care-workforce-social-worker-child-protection-lead-practitioner",
+            "label": "Child Protection Lead Practitioner",
+            "level": 3,
+            "aliases": []
+          },
+          {
+            "id": "l3-social-care-workforce-social-worker-practice-leader-social-worker",
+            "label": "Practice leader (social worker)",
+            "level": 3,
+            "aliases": []
+          },
+          {
+            "id": "l3-social-care-workforce-social-worker-practice-supervisor-social-worker",
+            "label": "Practice supervisor (social worker)",
+            "level": 3,
+            "aliases": []
+          },
+          {
+            "id": "l3-social-care-workforce-social-worker-principal-child-and-family-social-worker",
+            "label": "Principal Child and Family Social Worker",
+            "level": 3,
+            "aliases": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "l1-training-or-qualifications-provider-workforce",
+    "label": "Training or qualifications provider workforce",
+    "level": 1,
+    "aliases": [],
+    "children": [
+      {
+        "id": "l2-training-or-qualifications-provider-workforce-assessment-and-awarding-organisation-workforce",
+        "label": "Assessment and awarding organisation workforce",
+        "level": 2,
+        "aliases": [],
+        "children": []
+      },
+      {
+        "id": "l2-training-or-qualifications-provider-workforce-end-point-assessment-organisation-workforce",
+        "label": "End point assessment organisation workforce",
+        "level": 2,
+        "aliases": [
+          "EPAO workforce"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-training-or-qualifications-provider-workforce-independent-training-provider-workforce",
+        "label": "Independent training provider workforce",
+        "level": 2,
+        "aliases": [
+          "Apprenticeship provider (independent training provider)"
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "l1-voluntary-or-third-sector-workforce",
+    "label": "Voluntary or third sector workforce",
+    "level": 1,
+    "aliases": [
+      "Third sector workforce"
+    ],
+    "children": [
+      {
+        "id": "l2-voluntary-or-third-sector-workforce-adviser-voluntary-or-third-sector",
+        "label": "Adviser (voluntary or third sector)",
+        "level": 2,
+        "aliases": [
+          "Third sector (adviser)",
+          "Voluntary adviser"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-voluntary-or-third-sector-workforce-operational-worker-voluntary-or-third-sector",
+        "label": "Operational worker (voluntary or third sector)",
+        "level": 2,
+        "aliases": [
+          "Third sector (operational workforce)",
+          "Voluntary operational workforce"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-voluntary-or-third-sector-workforce-practitioner-voluntary-or-third-sector",
+        "label": "Practitioner (voluntary or third sector)",
+        "level": 2,
+        "aliases": [
+          "Third sector (practitioner)",
+          "Voluntary practitioner"
+        ],
+        "children": []
+      },
+      {
+        "id": "l2-voluntary-or-third-sector-workforce-service-manager-voluntary-or-third-sector",
+        "label": "Service manager (voluntary or third sector)",
+        "level": 2,
+        "aliases": [
+          "Third sector (service manager)",
+          "Voluntary service manager"
+        ],
+        "children": []
+      }
+    ]
+  }
+]

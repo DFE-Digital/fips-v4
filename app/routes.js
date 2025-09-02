@@ -75,7 +75,7 @@ router.get('/v1/categories', (req, res) => {
         const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
         
         // Filter to only show the specified taxonomies
-        const allowedTaxonomies = ['Business area', 'Phase', 'Type', 'Channels']
+        const allowedTaxonomies = ['Group', 'Phase', 'Type', 'Channels']
         const filteredCategories = categoriesData.filter(category => 
             allowedTaxonomies.includes(category.Taxonomy)
         )
@@ -112,9 +112,10 @@ router.get('/v1/categories/category/:taxonomy', (req, res) => {
         // Map URL slugs to taxonomy names
         const taxonomyMap = {
             'phase': 'Phase',
-            'business-area': 'Business area',
+            'group': 'Group',
             'type': 'Type',
-            'channels': 'Channels'
+            'channels': 'Channels',
+            'subgroup': 'SubGroup'
         }
         
         const taxonomyName = taxonomyMap[req.params.taxonomy]
@@ -130,6 +131,20 @@ router.get('/v1/categories/category/:taxonomy', (req, res) => {
             category.Taxonomy === taxonomyName
         )
         
+        // If this is a Group taxonomy, add subgroup counts
+        if (taxonomyName === 'Group') {
+            const allSubgroups = categoriesData.filter(category => 
+                category.Taxonomy === 'SubGroup'
+            )
+            
+            // Add subgroup count to each group
+            taxonomyItems.forEach(group => {
+                group.subgroupCount = allSubgroups.filter(subgroup => 
+                    subgroup.Parent === group.Item
+                ).length
+            })
+        }
+        
         res.render('v1/categories/category/index', {
             taxonomy: taxonomyName,
             items: taxonomyItems
@@ -138,6 +153,47 @@ router.get('/v1/categories/category/:taxonomy', (req, res) => {
         console.error('Error loading taxonomy data:', error)
         res.status(500).render('error', { 
             error: 'Unable to load taxonomy data' 
+        })
+    }
+})
+
+// v1 subgroup page route
+router.get('/v1/categories/group/:groupSlug/subgroups', (req, res) => {
+    const fs = require('fs')
+    const path = require('path')
+    
+    try {
+        const categoriesPath = path.join(__dirname, 'data/categories.json')
+        const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
+        
+        // Find the group by slug
+        const group = categoriesData.find(category => 
+            category.Taxonomy === 'Group' && 
+            (category.Slug === req.params.groupSlug || 
+             category.Item.toLowerCase().replace(/\s+/g, '_') === req.params.groupSlug)
+        )
+        
+        if (!group) {
+            return res.status(404).render('error', { 
+                error: 'Group not found',
+                message: 'The requested group does not exist.'
+            })
+        }
+        
+        // Get subgroups for this specific group
+        const subgroups = categoriesData.filter(category => 
+            category.Taxonomy === 'SubGroup' && 
+            category.Parent === group.Item
+        )
+        
+        res.render('v1/categories/subgroups/index', {
+            group: group,
+            subgroups: subgroups
+        })
+    } catch (error) {
+        console.error('Error loading subgroup data:', error)
+        res.status(500).render('error', { 
+            error: 'Unable to load subgroup data' 
         })
     }
 })
@@ -202,7 +258,7 @@ router.get('/v-spk-assessments/categories', (req, res) => {
         const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
         
         // Filter to only show the specified taxonomies
-        const allowedTaxonomies = ['Business area', 'Phase', 'Type', 'Channels']
+        const allowedTaxonomies = ['Group', 'Phase', 'Type', 'Channels']
         const filteredCategories = categoriesData.filter(category => 
             allowedTaxonomies.includes(category.Taxonomy)
         )
@@ -239,9 +295,10 @@ router.get('/v-spk-assessments/categories/category/:taxonomy', (req, res) => {
         // Map URL slugs to taxonomy names
         const taxonomyMap = {
             'phase': 'Phase',
-            'business-area': 'Business area',
+            'group': 'Group',
             'type': 'Type',
-            'channels': 'Channels'
+            'channels': 'Channels',
+            'subgroup': 'SubGroup'
         }
         
         const taxonomyName = taxonomyMap[req.params.taxonomy]
@@ -257,6 +314,20 @@ router.get('/v-spk-assessments/categories/category/:taxonomy', (req, res) => {
             category.Taxonomy === taxonomyName
         )
         
+        // If this is a Group taxonomy, add subgroup counts
+        if (taxonomyName === 'Group') {
+            const allSubgroups = categoriesData.filter(category => 
+                category.Taxonomy === 'SubGroup'
+            )
+            
+            // Add subgroup count to each group
+            taxonomyItems.forEach(group => {
+                group.subgroupCount = allSubgroups.filter(subgroup => 
+                    subgroup.Parent === group.Item
+                ).length
+            })
+        }
+        
         res.render('v-spk-assessments/categories/category/index', {
             taxonomy: taxonomyName,
             items: taxonomyItems
@@ -265,6 +336,47 @@ router.get('/v-spk-assessments/categories/category/:taxonomy', (req, res) => {
         console.error('Error loading taxonomy data:', error)
         res.status(500).render('error', { 
             error: 'Unable to load taxonomy data' 
+        })
+    }
+})
+
+// v-spk-assessments subgroup page route
+router.get('/v-spk-assessments/categories/group/:groupSlug/subgroups', (req, res) => {
+    const fs = require('fs')
+    const path = require('path')
+    
+    try {
+        const categoriesPath = path.join(__dirname, 'data/categories.json')
+        const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
+        
+        // Find the group by slug
+        const group = categoriesData.find(category => 
+            category.Taxonomy === 'Group' && 
+            (category.Slug === req.params.groupSlug || 
+             category.Item.toLowerCase().replace(/\s+/g, '_') === req.params.groupSlug)
+        )
+        
+        if (!group) {
+            return res.status(404).render('error', { 
+                error: 'Group not found',
+                message: 'The requested group does not exist.'
+            })
+        }
+        
+        // Get subgroups for this specific group
+        const subgroups = categoriesData.filter(category => 
+            category.Taxonomy === 'SubGroup' && 
+            category.Parent === group.Item
+        )
+        
+        res.render('v-spk-assessments/categories/subgroups/index', {
+            group: group,
+            subgroups: subgroups
+        })
+    } catch (error) {
+        console.error('Error loading subgroup data:', error)
+        res.status(500).render('error', { 
+            error: 'Unable to load subgroup data' 
         })
     }
 })

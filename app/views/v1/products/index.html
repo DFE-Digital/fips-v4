@@ -44,6 +44,29 @@
                                 }
                             }) }}
 
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s" for="user-autocomplete">
+                                    User groups
+                                </label>
+                                <div id="user-autocomplete-container"></div>
+                                
+                                <!-- Selected users will appear here as checkboxes -->
+                                <div id="selected-users-container" style="margin-top: 15px; display: none;">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xs">
+                                            Selected user types
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" id="selected-users-list">
+                                            <!-- Selected users will be dynamically added here -->
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                          
+
                             {% if filterOptions.phases.length > 0 %}
                                 {% set phaseItems = [] %}
                                 {% for phase in filterOptions.phases %}
@@ -67,6 +90,8 @@
                                     items: phaseItems
                                 }) }}
                             {% endif %}
+
+                         
 
                             {% if filterOptions.businessAreas.length > 0 %}
                                 {% set businessAreaItems = [] %}
@@ -92,6 +117,93 @@
                                 }) }}
                             {% endif %}
 
+
+                            {% if filterOptions.groups.length > 0 %}
+                                {% set groupItems = [] %}
+                                {% for group in filterOptions.groups %}
+                                    {% set subgroupsForThisGroup = [] %}
+                                    {% for subgroup in filterOptions.subgroups %}
+                                        {% if subgroup.parentSlug == group.value %}
+                                            {% set subgroupsForThisGroup = (subgroupsForThisGroup.push({
+                                                value: subgroup.value,
+                                                text: subgroup.text + " (" + subgroup.count + ")",
+                                                checked: subgroup.value in filters.subgroup
+                                            }), subgroupsForThisGroup) %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    
+                                    {% if subgroupsForThisGroup.length > 0 %}
+                                        {% set groupItems = (groupItems.push({
+                                            value: group.value,
+                                            text: group.text + " (" + group.count + ")",
+                                            checked: group.value in filters.group,
+                                            conditional: {
+                                                html: govukCheckboxes({
+                                                    idPrefix: "subgroup-" + group.value,
+                                                    name: "subgroup",
+                                                    classes: "govuk-checkboxes--small",
+                                                    items: subgroupsForThisGroup
+                                                })
+                                            }
+                                        }), groupItems) %}
+                                    {% else %}
+                                        {% set groupItems = (groupItems.push({
+                                            value: group.value,
+                                            text: group.text + " (" + group.count + ")",
+                                            checked: group.value in filters.group
+                                        }), groupItems) %}
+                                    {% endif %}
+                                {% endfor %}
+                                
+                                {{ govukCheckboxes({
+                                    idPrefix: "group",
+                                    name: "group",
+                                    classes: "govuk-checkboxes--small",
+                                    fieldset: {
+                                        legend: {
+                                            text: "Group",
+                                            classes: "govuk-fieldset__legend--s"
+                                        }
+                                    },
+                                    items: groupItems
+                                }) }}
+                            {% endif %}
+
+
+
+
+
+                          
+
+
+
+
+                            {% if filterOptions.types.length > 0 %}
+                                {% set typeItems = [] %}
+                                {% for type in filterOptions.types %}
+                                    {% set typeItems = (typeItems.push({
+                                        value: type.value,
+                                        text: type.text + " (" + type.count + ")",
+                                        checked: type.value in filters.type
+                                    }), typeItems) %}
+                                {% endfor %}
+                                
+                                {{ govukCheckboxes({
+                                    idPrefix: "type",
+                                    name: "type",
+                                    classes: "govuk-checkboxes--small",
+                                    fieldset: {
+                                        legend: {
+                                            text: "Type",
+                                            classes: "govuk-fieldset__legend--s"
+                                        }
+                                    },
+                                    items: typeItems
+                                }) }}
+                            {% endif %}
+
+                            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
                             {% if filterOptions.parents.length > 0 %}
                                 {% set parentItems = [] %}
                                 {% for parent in filterOptions.parents %}
@@ -101,11 +213,37 @@
                                         checked: parent.value in filters.parent
                                     }), parentItems) %}
                                 {% endfor %}
+
+                            
+
+                                  {% if filterOptions.phases.length > 0 %}
+                                {% set phaseItems = [] %}
+                                {% for phase in filterOptions.phases %}
+                                    {% set phaseItems = (phaseItems.push({
+                                        value: phase.value,
+                                        text: phase.text + " (" + phase.count + ")",
+                                        checked: phase.value in filters.phase
+                                    }), phaseItems) %}
+                                {% endfor %}
+                                
+                                {{ govukCheckboxes({
+                                    idPrefix: "phase",
+                                    name: "phase",
+                                    classes: "govuk-checkboxes--small",
+                                    fieldset: {
+                                        legend: {
+                                            text: "CMDB status",
+                                            classes: "govuk-fieldset__legend--s"
+                                        }
+                                    },
+                                    items: phaseItems
+                                }) }}
+                            {% endif %}
                                 
                                 <div class="govuk-form-group">
                                     <fieldset class="govuk-fieldset">
                                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                            Business area
+                                            CMDB group
                                         </legend>
                                         <div class="govuk-checkboxes govuk-checkboxes--small" style="max-height: 210px; overflow-y: auto; padding-left: 10px; padding-right: 10px; margin-left: -10px;">
                                             {% for parent in parentItems %}
@@ -120,7 +258,6 @@
                                     </fieldset>
                                 </div>
                             {% endif %}
-
 
                         {% endset %}
 
@@ -154,7 +291,7 @@
                                 (page {{ pagination.currentPage }} of {{ pagination.totalPages }})
                             {% endif %}
                         </p>
-                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                  
                     </div>
 
                     <!-- Products Grid -->
@@ -238,4 +375,299 @@
         </main>
     </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+    <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // User groups data passed from controller
+            const userGroupsData = {{ userGroupsData | dump | safe }} || [];
+            
+            console.log('User groups data loaded:', userGroupsData.length, 'items');
+            
+            // Array to store selected users
+            let selectedUsers = [];
+            
+            // Parse existing selections from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const existingUsers = urlParams.getAll('user');
+            if (existingUsers.length > 0) {
+                existingUsers.forEach(userId => {
+                    const user = userGroupsData.find(u => u.id === userId);
+                    if (user) {
+                        selectedUsers.push(user);
+                    }
+                });
+                updateSelectedUsersDisplay();
+            }
+            
+            // Custom suggestion template that shows level and parent info
+            function suggestionTemplate(suggestion) {
+                if (typeof suggestion === 'string') {
+                    return suggestion;
+                }
+                
+                // Special handling for "Add all options" item
+                if (suggestion.isAddAll) {
+                    return '<div class="autocomplete-suggestion autocomplete-suggestion--add-all">+ Add all options (' + suggestion.count + ')</div>';
+                }
+                
+                let html = '<div class="autocomplete-suggestion">';
+                html += '<div class="autocomplete-suggestion__label">' + suggestion.label + '</div>';
+                
+                // Add metadata based on level
+                if (suggestion.level === 2) {
+                    html += '<div class="autocomplete-suggestion__meta">' + suggestion.parentLabel + '</div>';
+                } else if (suggestion.level === 3) {
+                    html += '<div class="autocomplete-suggestion__meta">' + suggestion.grandparentLabel + ' → ' + suggestion.parentLabel + '</div>';
+                }
+                
+                html += '</div>';
+                return html;
+            }
+            
+            // Function to update the displayed selected users
+            function updateSelectedUsersDisplay() {
+                const container = document.getElementById('selected-users-container');
+                const list = document.getElementById('selected-users-list');
+                
+                if (selectedUsers.length === 0) {
+                    container.style.display = 'none';
+                    return;
+                }
+                
+                container.style.display = 'block';
+                list.innerHTML = '';
+                
+                selectedUsers.forEach((user, index) => {
+                    const checkboxItem = document.createElement('div');
+                    checkboxItem.className = 'govuk-checkboxes__item';
+                    
+                    const checkbox = document.createElement('input');
+                    checkbox.className = 'govuk-checkboxes__input';
+                    checkbox.type = 'checkbox';
+                    checkbox.name = 'user';
+                    checkbox.value = user.id;
+                    checkbox.id = 'user-' + index;
+                    checkbox.checked = true;
+                    
+                    const label = document.createElement('label');
+                    label.className = 'govuk-label govuk-checkboxes__label';
+                    label.setAttribute('for', 'user-' + index);
+                    label.textContent = user.label;
+                    
+                    checkboxItem.appendChild(checkbox);
+                    checkboxItem.appendChild(label);
+                    list.appendChild(checkboxItem);
+                });
+            }
+            
+            // Function to add a user to the selected list
+            function addUser(user) {
+                // Check if user is already selected
+                const alreadySelected = selectedUsers.some(u => u.id === user.id);
+                if (!alreadySelected) {
+                    selectedUsers.push(user);
+                    updateSelectedUsersDisplay();
+                }
+            }
+            
+
+
+            // Custom search function that filters by labels and aliases
+            function source(query, populateResults) {
+                if (!query || query.length < 2) {
+                    populateResults([]);
+                    return;
+                }
+                
+                const searchTerm = query.toLowerCase();
+                const filteredResults = userGroupsData.filter(function(item) {
+                    // Search in the combined search text (label + aliases)
+                    // Exclude already selected users
+                    const alreadySelected = selectedUsers.some(u => u.id === item.id);
+                    if (alreadySelected) return false;
+                    
+                    // Debug: log the search for "teacher"
+                    if (searchTerm === 'teacher' && item.label.toLowerCase().includes('send')) {
+                        console.log('SEND item:', item.label, 'searchText:', item.searchText, 'includes teacher:', item.searchText.includes(searchTerm));
+                    }
+                    
+                    return item.searchText.includes(searchTerm);
+                }).sort(function(a, b) {
+                    // Sort alphabetically by label
+                    return a.label.localeCompare(b.label);
+                });
+                
+                const results = filteredResults.slice(0, 15); // Limit to 15 individual results to include more options
+                
+                // Debug: log results for "teacher" search
+                if (searchTerm === 'teacher') {
+                    console.log('Filtered results count:', filteredResults.length);
+                    console.log('Final results count:', results.length);
+                    console.log('Results include SEND teacher:', results.some(r => r.label && r.label.includes('SEND teacher')));
+                    results.forEach((r, i) => {
+                        if (r.label) console.log(`Result ${i}:`, r.label);
+                    });
+                }
+                
+                // Add "Add all options" item at the top if there are results
+                if (results.length > 1) {
+                    results.unshift({
+                        isAddAll: true,
+                        count: Math.min(filteredResults.length, 15),
+                        allItems: results,
+                        label: 'Add all options',
+                        id: 'add-all-' + Date.now()
+                    });
+                }
+                
+                populateResults(results);
+            }
+            
+            // No initial value needed for multi-select
+            let initialValue = '';
+            
+            // Check if accessible autocomplete is available
+            if (typeof accessibleAutocomplete === 'undefined') {
+                console.error('Accessible autocomplete library not loaded');
+                // Create fallback input
+                const container = document.getElementById('user-autocomplete-container');
+                container.innerHTML = '<input class="govuk-input" type="text" id="user-fallback" name="user" placeholder="" value="' + (document.getElementById('user-hidden').value || '') + '">';
+                return;
+            }
+            
+            try {
+                // Initialize accessible autocomplete
+                accessibleAutocomplete({
+                    element: document.querySelector('#user-autocomplete-container'),
+                    id: 'user-autocomplete',
+                    name: 'user-display', // Different name to avoid conflict
+                    defaultValue: initialValue,
+                    source: source,
+                    minLength: 2,
+                    templates: {
+                        inputValue: function(suggestion) {
+                            return suggestion && suggestion.label ? suggestion.label : suggestion;
+                        },
+                        suggestion: suggestionTemplate
+                    },
+                    onConfirm: function(confirmed) {
+                        if (confirmed && confirmed.isAddAll) {
+                            // Add all visible options
+                            confirmed.allItems.forEach(function(item) {
+                                if (!item.isAddAll) {
+                                    addUser(item);
+                                }
+                            });
+                            // Clear input and keep dropdown open
+                            setTimeout(function() {
+                                const input = document.querySelector('#user-autocomplete');
+                                if (input) {
+                                    input.value = '';
+                                    input.focus();
+                                    // Trigger a new search with empty value to close dropdown
+                                    const event = new Event('input', { bubbles: true });
+                                    input.dispatchEvent(event);
+                                }
+                            }, 100);
+                        } else if (confirmed && confirmed.id) {
+                            addUser(confirmed);
+                            // Clear input and keep dropdown open
+                            setTimeout(function() {
+                                const input = document.querySelector('#user-autocomplete');
+                                if (input) {
+                                    input.value = '';
+                                    input.focus();
+                                    // Trigger a new search with empty value to close dropdown
+                                    const event = new Event('input', { bubbles: true });
+                                    input.dispatchEvent(event);
+                                }
+                            }, 100);
+                        } else if (typeof confirmed === 'string') {
+                            // Handle case where user types something that doesn't match
+                            const match = userGroupsData.find(function(user) {
+                                return user.label.toLowerCase() === confirmed.toLowerCase();
+                            });
+                            if (match) {
+                                addUser(match);
+                                // Clear input and keep dropdown open
+                                setTimeout(function() {
+                                    const input = document.querySelector('#user-autocomplete');
+                                    if (input) {
+                                        input.value = '';
+                                        input.focus();
+                                        const event = new Event('input', { bubbles: true });
+                                        input.dispatchEvent(event);
+                                    }
+                                }, 100);
+                            }
+                        }
+                    },
+                    showNoOptionsFound: true,
+                    showAllValues: false,
+                    displayMenu: 'overlay',
+                    placeholder: ''
+                });
+            } catch (error) {
+                console.error('Error initializing autocomplete:', error);
+                // Create fallback input on error
+                const container = document.getElementById('user-autocomplete-container');
+                container.innerHTML = '<input class="govuk-input" type="text" id="user-fallback" name="user" placeholder="Start typing to search user types..." value="' + (document.getElementById('user-hidden').value || '') + '">';
+            }
+        });
+    </script>
+    
+    <style>
+        .autocomplete-suggestion {
+            padding: 8px 12px;
+            background-color: transparent;
+        }
+        
+        .autocomplete__option:hover,
+        .autocomplete__option:focus,
+        .autocomplete__option--focused {
+            background-color: #ffdd00 !important;
+            color: #0b0c0c !important;
+        }
+        
+        .autocomplete-suggestion--add-all {
+            background-color: transparent;
+            color: #0b0c0c;
+            font-weight: normal;
+            font-size: 16px;
+        }
+        
+        .autocomplete-suggestion__label {
+            font-weight: normal;
+            font-size: 16px;
+            color: #0b0c0c;
+        }
+        
+        .autocomplete-suggestion__meta {
+            font-size: 14px;
+            color: #505a5f;
+            margin-top: 2px;
+        }
+        
+        .autocomplete__menu {
+            border: 2px solid #0b0c0c;
+            border-top: 0;
+            display: none; /* Hidden by default */
+        }
+        
+        .autocomplete__menu--visible {
+            display: block; /* Show when has results */
+        }
+        
+        .autocomplete__option:hover,
+        .autocomplete__option--focused {
+            background-color: #ffdd00;
+        }
+        
+        .autocomplete__option--odd {
+            background-color: #f3f2f1;
+        }
+    </style>
 {% endblock %}

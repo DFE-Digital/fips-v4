@@ -1047,16 +1047,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Business area",
-    "Item":"CXD",
-    "Slug": "cxd",
-    "Description":"Customer Experience Design and user-centred design services.",
-    "Validated":null,
-    "In version":null,
-    "Comments":null
-  },
-  {
-    "Taxonomy":"Business area",
+    "Taxonomy":"Group",
     "Item":"Families",
     "Slug": "families",
     "Description":"Services supporting families and children.",
@@ -1065,16 +1056,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Business area",
-    "Item":"Funding",
-    "Slug": "funding",
-    "Description":"Financial support and funding programmes for education and skills.",
-    "Validated":null,
-    "In version":null,
-    "Comments":null
-  },
-  {
-    "Taxonomy":"Business area",
+    "Taxonomy":"Group",
     "Item":"Regions",
     "Slug": "regions",
     "Description":"Services for academies and trusts.",
@@ -1083,7 +1065,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Business area",
+    "Taxonomy":"Group",
     "Item":"Schools",
     "Slug": "schools",
     "Description":"Services supporting teachers and school leaders.",
@@ -1092,16 +1074,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Business area",
-    "Item":"Sector Facing",
-    "Slug": "sector_facing",
-    "Description":"Services that directly interface with education and skills sectors.",
-    "Validated":null,
-    "In version":null,
-    "Comments":null
-  },
-  {
-    "Taxonomy":"Business area",
+    "Taxonomy":"Group",
     "Item":"Skills",
     "Slug": "skills",
     "Description":"Adult education, apprenticeships and skills development services.",
@@ -1110,10 +1083,30 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Business area",
+    "Taxonomy":"Group",
     "Item":"Operations and Infrastructure",
     "Slug": "operations_and_infrastructure",
     "Description":"Internal operations, technology infrastructure and support services.",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"SubGroup",
+    "Item":"CXD",
+    "Slug": "cxd",
+    "Description":"Customer experience and design",
+    "Parent": "Operations and Infrastructure",
+    "Validated":null,
+    "In version":null,
+    "Comments":null
+  },
+  {
+    "Taxonomy":"SubGroup",
+    "Item":"Funding",
+    "Slug": "funding",
+    "Description":"Funding services",
+    "Parent": "Operations and Infrastructure",
     "Validated":null,
     "In version":null,
     "Comments":null

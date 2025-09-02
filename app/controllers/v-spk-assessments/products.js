@@ -52,11 +52,43 @@ function filterProducts(products, filters) {
             if (!filters['business-area'].includes(productBusinessArea)) return false;
         }
         
+        // Group filter
+        if (filters.group && filters.group.length > 0) {
+            const productParent = product.Parent ? 
+                product.Parent.toLowerCase().replace(/\s+/g, '_') : '';
+            if (!filters.group.includes(productParent)) return false;
+        }
+        
+        // Type filter
+        if (filters.type && filters.type.length > 0) {
+            const productType = product.Type ? 
+                product.Type.toLowerCase().replace(/\s+/g, '_') : '';
+            if (!filters.type.includes(productType)) return false;
+        }
+        
         // Parent filter
         if (filters.parent && filters.parent.length > 0) {
             const productParent = product.Parent ? 
                 product.Parent.toLowerCase().replace(/\s+/g, '_') : '';
             if (!filters.parent.includes(productParent)) return false;
+        }
+        
+        // Subgroup filter - filter by products that belong to specific subgroups
+        if (filters.subgroup && filters.subgroup.length > 0) {
+            // For now, subgroup filter will work by filtering products that have
+            // a Parent that matches the subgroup's parent
+            // This is a simplified approach - in a real system you might have a direct subgroup field
+            if (!product.Parent) return false;
+            
+            // Check if the product's parent matches any of the selected subgroups' parents
+            const productParent = product.Parent.toLowerCase().replace(/\s+/g, '_');
+            const hasMatchingSubgroup = filters.subgroup.some(subgroup => {
+                // This would need to be enhanced with actual subgroup data
+                // For now, we'll use a simple approach
+                return subgroup === productParent;
+            });
+            
+            if (!hasMatchingSubgroup) return false;
         }
         
         // Keywords filter - search only in Name field
@@ -86,6 +118,52 @@ function paginateResults(products, page = 1, perPage = 12) {
     };
 }
 
+// Load and process user groups data for autocomplete
+function loadUserGroupsData() {
+    try {
+        const dataPath = path.join(__dirname, '../../data/nested_all_user_groups.json');
+        const data = fs.readFileSync(dataPath, 'utf8');
+        const userGroups = JSON.parse(data);
+        
+        // Extract all level 2 and 3 items with their hierarchy info
+        const searchableItems = [];
+        
+        userGroups.forEach(level1 => {
+            level1.children.forEach(level2 => {
+                // Add level 2 item
+                searchableItems.push({
+                    id: level2.id,
+                    label: level2.label,
+                    level: 2,
+                    aliases: level2.aliases || [],
+                    parentLabel: level1.label,
+                    searchText: [level2.label, ...(level2.aliases || [])].join(' ').toLowerCase()
+                });
+                
+                // Add level 3 items if they exist
+                if (level2.children && level2.children.length > 0) {
+                    level2.children.forEach(level3 => {
+                        searchableItems.push({
+                            id: level3.id,
+                            label: level3.label,
+                            level: 3,
+                            aliases: level3.aliases || [],
+                            parentLabel: level2.label,
+                            grandparentLabel: level1.label,
+                            searchText: [level3.label, ...(level3.aliases || [])].join(' ').toLowerCase()
+                        });
+                    });
+                }
+            });
+        });
+        
+        return searchableItems;
+    } catch (error) {
+        console.error('Error loading user groups data:', error);
+        return [];
+    }
+}
+
 // Get unique values for filter options
 function getFilterOptions(products) {
     // Get unique phases and create distinct filter options
@@ -100,16 +178,28 @@ function getFilterOptions(products) {
         count: products.filter(p => p.phase === phase).length
     }));
     
-    // Get unique business areas and create distinct filter options
-    const uniqueBusinessAreas = [...new Set(products
-        .map(p => p['business-area'])
+    // Get unique groups (from Parent field) and create distinct filter options
+    const uniqueGroups = [...new Set(products
+        .map(p => p.Parent)
         .filter(Boolean)
     )];
     
-    const businessAreas = uniqueBusinessAreas.map(area => ({
-        value: area.toLowerCase().replace(/\s+/g, '_'),
-        text: area,
-        count: products.filter(p => p['business-area'] === area).length
+    const groups = uniqueGroups.map(group => ({
+        value: group.toLowerCase().replace(/\s+/g, '_'),
+        text: group,
+        count: products.filter(p => p.Parent === group).length
+    }));
+
+    // Get unique types and create distinct filter options
+    const uniqueTypes = [...new Set(products
+        .map(p => p.Type)
+        .filter(Boolean)
+    )];
+    
+    const types = uniqueTypes.map(type => ({
+        value: type.toLowerCase().replace(/\s+/g, '_'),
+        text: type,
+        count: products.filter(p => p.Type === type).length
     }));
     
     // Get unique parents and create distinct filter options
@@ -124,10 +214,31 @@ function getFilterOptions(products) {
         count: products.filter(p => p.Parent === parent).length
     }));
     
+    // Get unique subgroups from categories.json
+    let subgroups = [];
+    try {
+        const categoriesPath = path.join(__dirname, '../../data/categories.json');
+        const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'));
+        const subgroupItems = categoriesData.filter(category => 
+            category.Taxonomy === 'SubGroup'
+        );
+        
+        subgroups = subgroupItems.map(subgroup => ({
+            value: subgroup.Slug || subgroup.Item.toLowerCase().replace(/\s+/g, '_'),
+            text: subgroup.Item,
+            parent: subgroup.Parent,
+            count: products.filter(p => p.Parent === subgroup.Parent).length
+        }));
+    } catch (error) {
+        console.error('Error loading subgroups:', error);
+    }
+    
     return {
         phases: phases.sort((a, b) => a.text.localeCompare(b.text)),
-        businessAreas: businessAreas.sort((a, b) => a.text.localeCompare(b.text)),
-        parents: parents.sort((a, b) => a.text.localeCompare(b.text))
+        groups: groups.sort((a, b) => a.text.localeCompare(b.text)),
+        types: types.sort((a, b) => a.text.localeCompare(b.text)),
+        parents: parents.sort((a, b) => a.text.localeCompare(b.text)),
+        subgroups: subgroups.sort((a, b) => a.text.localeCompare(b.text))
     };
 }
 
@@ -140,7 +251,11 @@ exports.index = (req, res) => {
         const filters = {
             phase: req.query.phase ? (Array.isArray(req.query.phase) ? req.query.phase.filter(p => p !== '_unchecked') : [req.query.phase].filter(p => p !== '_unchecked')) : [],
             'business-area': req.query['business-area'] ? (Array.isArray(req.query['business-area']) ? req.query['business-area'].filter(ba => ba !== '_unchecked') : [req.query['business-area']].filter(ba => ba !== '_unchecked')) : [],
+            group: req.query.group ? (Array.isArray(req.query.group) ? req.query.group.filter(g => g !== '_unchecked') : [req.query.group].filter(g => g !== '_unchecked')) : [],
+            type: req.query.type ? (Array.isArray(req.query.type) ? req.query.type.filter(t => t !== '_unchecked') : [req.query.type].filter(t => t !== '_unchecked')) : [],
             parent: req.query.parent ? (Array.isArray(req.query.parent) ? req.query.parent.filter(p => p !== '_unchecked') : [req.query.parent].filter(p => p !== '_unchecked')) : [],
+            subgroup: req.query.subgroup ? (Array.isArray(req.query.subgroup) ? req.query.subgroup.filter(sg => sg !== '_unchecked') : [req.query.subgroup].filter(sg => sg !== '_unchecked')) : [],
+            user: req.query.user ? (Array.isArray(req.query.user) ? req.query.user.filter(u => u !== '_unchecked') : [req.query.user].filter(u => u !== '_unchecked')) : [],
             keywords: req.query.keywords || ''
         };
         
@@ -152,7 +267,10 @@ exports.index = (req, res) => {
         const paginatedResults = paginateResults(filteredProducts, page);
         
         // Get filter options with counts based on current filters
-        const filterOptions = getFilterOptions(filteredProducts);
+        const filterOptions = getFilterOptions(allProducts);
+        
+        // Load user groups data for autocomplete
+        const userGroupsData = loadUserGroupsData();
         
         // Prepare selected filters for display
         const selectedFilters = [];
@@ -176,14 +294,47 @@ exports.index = (req, res) => {
                 }))
             });
         }
+
+        if (filters.group.length > 0) {
+            selectedFilters.push({
+                heading: { text: 'Group' },
+                items: filters.group.map(group => ({
+                    href: removeFilterFromUrl(req.originalUrl, 'group', group),
+                    text: filterOptions.groups.find(g => g.value === group)?.text || group
+                }))
+            });
+        }
         
         if (filters.parent.length > 0) {
             selectedFilters.push({
-                heading: { text: 'Business area' },
+                heading: { text: 'Categories' },
                 items: filters.parent.map(parent => ({
                     href: removeFilterFromUrl(req.originalUrl, 'parent', parent),
                     text: filterOptions.parents.find(p => p.value === parent)?.text || parent
                 }))
+            });
+        }
+        
+        if (filters.subgroup.length > 0) {
+            selectedFilters.push({
+                heading: { text: 'Sub-categories' },
+                items: filters.subgroup.map(subgroup => ({
+                    href: removeFilterFromUrl(req.originalUrl, 'subgroup', subgroup),
+                    text: subgroup
+                }))
+            });
+        }
+        
+        if (filters.user.length > 0) {
+            selectedFilters.push({
+                heading: { text: 'User' },
+                items: filters.user.map(userId => {
+                    const selectedUser = userGroupsData.find(user => user.id === userId);
+                    return {
+                        href: removeFilterFromUrl(req.originalUrl, 'user', userId),
+                        text: selectedUser ? selectedUser.label : userId
+                    };
+                })
             });
         }
         
@@ -195,8 +346,17 @@ exports.index = (req, res) => {
         if (filters['business-area'].length > 0) {
             filters['business-area'].forEach(area => queryParams.append('business-area', area));
         }
+        if (filters.group.length > 0) {
+            filters.group.forEach(group => queryParams.append('group', group));
+        }
         if (filters.parent.length > 0) {
             filters.parent.forEach(parent => queryParams.append('parent', parent));
+        }
+        if (filters.subgroup.length > 0) {
+            filters.subgroup.forEach(subgroup => queryParams.append('subgroup', subgroup));
+        }
+        if (filters.user.length > 0) {
+            filters.user.forEach(user => queryParams.append('user', user));
         }
         if (filters.keywords) {
             queryParams.append('keywords', filters.keywords);
@@ -208,6 +368,7 @@ exports.index = (req, res) => {
             pagination: paginatedResults,
             filters: filters,
             filterOptions: filterOptions,
+            userGroupsData: userGroupsData,
             selectedFilters: selectedFilters,
             clearFiltersUrl: req.baseUrl + req.path,
             baseQuery: baseQuery
