@@ -75,7 +75,7 @@ router.get('/v1/categories', (req, res) => {
         const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
         
         // Filter to only show the specified taxonomies
-        const allowedTaxonomies = ['Business area', 'Phase', 'Type', 'Channels']
+        const allowedTaxonomies = ['Business area', 'Phase', 'Type', 'Channel']
         const filteredCategories = categoriesData.filter(category => 
             allowedTaxonomies.includes(category.Taxonomy)
         )
@@ -114,7 +114,7 @@ router.get('/v1/categories/category/:taxonomy', (req, res) => {
             'phase': 'Phase',
             'business-area': 'Business area',
             'type': 'Type',
-            'channels': 'Channels'
+            'channel': 'Channel'
         }
         
         const taxonomyName = taxonomyMap[req.params.taxonomy]
@@ -202,7 +202,7 @@ router.get('/v-spk-assessments/categories', (req, res) => {
         const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'))
         
         // Filter to only show the specified taxonomies
-        const allowedTaxonomies = ['Business area', 'Phase', 'Type', 'Channels']
+        const allowedTaxonomies = ['Business area', 'Phase', 'Type', 'Channel']
         const filteredCategories = categoriesData.filter(category => 
             allowedTaxonomies.includes(category.Taxonomy)
         )
@@ -241,7 +241,7 @@ router.get('/v-spk-assessments/categories/category/:taxonomy', (req, res) => {
             'phase': 'Phase',
             'business-area': 'Business area',
             'type': 'Type',
-            'channels': 'Channels'
+            'channel': 'Channel'
         }
         
         const taxonomyName = taxonomyMap[req.params.taxonomy]

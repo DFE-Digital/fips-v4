@@ -1,6 +1,6 @@
 [
   {
-    "Taxonomy":"Channels",
+    "Taxonomy":"Channel",
     "Item":"Web",
     "Slug": "web",
     "Description":"Services delivered through a website accessible via browsers on desktops, laptops, tablets, and mobile devices.",
@@ -9,7 +9,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Channels",
+    "Taxonomy":"Channel",
     "Item":"Native app",
     "Slug": "native_app",
     "Description":"Applications built specifically for mobile platforms (iOS, Android) offering enhanced performance and device integration.",
@@ -18,7 +18,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Channels",
+    "Taxonomy":"Channel",
     "Item":"Face-to-face",
     "Slug": "face_to_face",
     "Description":"Direct in-person interactions where service users meet with a representative or attend events, consultations, or physical service centres.",
@@ -27,7 +27,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Channels",
+    "Taxonomy":"Channel",
     "Item":"Phone",
     "Slug": "phone",
     "Description":"Voice-based communications provided via telephone support lines or call centres.",
@@ -36,7 +36,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Channels",
+    "Taxonomy":"Channel",
     "Item":"Email",
     "Slug": "email",
     "Description":"Communication channel using email for notifications, updates, and support.",
@@ -45,7 +45,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Channels",
+    "Taxonomy":"Channel",
     "Item":"Chat",
     "Slug": "chat",
     "Description":"Real-time text-based communication delivered through web or mobile interfaces, often supporting automated and human interactions.",
@@ -54,7 +54,7 @@
     "Comments":null
   },
   {
-    "Taxonomy":"Channels",
+    "Taxonomy":"Channel",
     "Item":"Print media",
     "Slug": "print_media",
     "Description":null,
@@ -63,7 +63,7 @@
     "Comments":"Letters, newspapers, flyers, brochures"
   },
   {
-    "Taxonomy":"Channels",
+    "Taxonomy":"Channel",
     "Item":"Other digital media",
     "Slug": "other_digital_media",
     "Description":null,
